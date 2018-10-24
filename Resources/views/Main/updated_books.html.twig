@@ -1,0 +1,173 @@
+{% extends ':front:base.html.twig' %}
+
+{% block content %}
+    <body id="body">
+    <!-- class="start-menuHide side-menu-hidden" -->
+    <div class="main-wrapper" id="main-wrapper">
+        {% include 'FrontBundle:Main/include:header.html.twig' %}
+        <div class="main-content">
+            <aside id="side-navigation">
+                <div class="side-navigation-inner">
+                    <h4 class="h5 strong6 main-color p-3 sideMenuHead">
+                        <a href="#" class="styled-icon styled-icon--xs styled-icon--round menu-trigger main-color "> <i class="ti-close"></i> </a>
+                        <a href="#" class="main-logo d-inline-block align-top"> <img src="../assets/img/logo.jpg" alt=""></a>
+                    </h4>
+                    <div class="side-nav">
+                        {% include 'FrontBundle:Main/include:side_menu.html.twig' %}
+                        {% include 'FrontBundle:Main/include:side_nav_tabs.html.twig' %}
+                    </div>
+                </div>
+            </aside>
+            <section id="main-sec">
+                <div id="mainView" class="mainView-normal">
+                    <div class="main-sec-header">
+                        <div class="main-page-header-top p-4">
+                            <div class="page-header-top-title">
+                                <h1 class="h2 mb-0">
+                                <span class="styled-icon styled-icon-imgCenter styled-icon--sm styled-icon--dark" style="background-color:#ea4e4e">
+                                    <i class="ti-time"></i>
+                                </span>
+                                    <span class="page-header-top-text"> {{ 'front.main_side_menu.updated_books'|trans }}</span>
+                                </h1>
+                            </div>
+                            <div class="page-header-top-side mr-auto">
+                                <ul class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="{{ path('front_main_index') }}">{{ 'front.main_side_menu.home'|trans }}</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">{{ 'front.main_side_menu.updated_books'|trans }}</li>
+                                    <li class="rss-item">
+                                        <a href="#" class="styled-icon ripple styled-icon--xs styled-icon--borderd bg-color-light">
+                                            <i class="ti-rss-alt"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="main-page-header-bottom head-title no-padding">
+                            <div class="sorting-head" style="height: 65px;">
+                                <div class="sorting-head-inner" style="display: none; ">
+                                </div>
+                            </div>
+                            <ul class="mainView-toggles">
+                                <li><a class="mainView-normal-trig"><i class="ti-view-grid"></i></a></li>
+                                <li><a class="mainView-list-trig"><i class="ti-view-list"></i></a></li>
+                                <li><a class="mainView-compact-trig"><i class="ti-align-justify"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="main-sec-inner mainView-content p-4">
+                        <div class="page-cards">
+                            <ul class="row tight-row">
+                                {% for allBook in allBooks %}
+                                    <li class="col-lg-4 col-md-6 col-sm-12 mainView-item">
+                                        <div class="card mainView-card mb-3">
+                                            <div class="card-body">
+                                                <div class="thumbnail-item side-thumbnail-item">
+                                                    <div class="thumb-head">
+                                                        <div class="thumb-head-inner">
+                                                            <div class="book-thumb book-thumb-sm book-withParts">
+                                                                {% if allBook.collection %}
+                                                                    <div class="book-parts-patch">
+                                                                <span>
+                                                                    {{ globalVarService.getOtherBookPartsCount(allBook.collection) }} {{ 'front.main.parts'|trans }}
+                                                                </span>
+                                                                    </div>
+                                                                {% endif %}
+                                                                <a class="book-cover" href="{{ path('front_book_book_details', {'id': allBook.id }) }}">
+                                                                    <img src="{{ asset(allBook.photo) }}" alt="{{ allBook.translate().summary }}">
+                                                                    <span class="book-cover-mark"></span>
+                                                                </a>
+                                                                <div class="book-info dropdown">
+                                                                    <a href="#" class="styled-icon styled-icon--xxs styled-icon--round styled-icon--borderd bg-color-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-info"></i></a>
+                                                                    <div class="dropdown-menu dropdown-menu-right bg-color-light">
+                                                                        <ul class="p-4 icons-list">
+                                                                            <li><i class="ti-user"></i> {{ 'front.main.author'|trans }}: <a href="#" class="color2 strong6">
+                                                                                    {% for author in allBook.author %}{{ author.translate().name }}{% endfor %}</a> </li>
+                                                                            <li> <i class="ti-world"></i> {{ 'front.main.translator'|trans }}: <a href="#" class="color2 strong6">
+                                                                                    {% for translator in allBook.translator %}{{ translator.translate().name }}{% endfor %}</a> </li>
+                                                                            <li> <i class="ti-calendar"></i> {{ 'front.main.date_released'|trans }}: <strong class="strong6">{{ HijriDate.toHijriDate(allBook.createdAt) }} {{ 'admin.titles.hijri'|trans }}</strong> </li>
+                                                                            <li> <i class="ti-light-bulb"></i> {{ 'front.main.last_updated'|trans }}: <strong class="strong6">{{ HijriDate.toHijriDate(allBook.updatedAt) }} {{ 'admin.titles.hijri'|trans }}</strong> </li>
+                                                                            <li> <i class="ti-list"></i> {{ 'front.main.diwy'|trans }} : <strong class="strong6"> {{ allBook.dewey }}</strong> </li>
+                                                                            {% if allBook.numPage %}
+                                                                                <li> <i class="ti-files"></i> {{ 'front.main.pages'|trans }}: <strong class="strong6"> {{ allBook.numPage }}</strong> </li>
+                                                                            {% endif %}
+                                                                            {% if allBook.viewsFromApp != 0 or allBook.viewsFromSite != 0 %}
+                                                                                <li> <i class="ti-eye"></i> {{ 'front.main.views'|trans }} : <strong class="strong6">  {{ allBook.viewsFromApp + allBook.viewsFromSite}}</strong> </li>
+                                                                            {% endif %}
+                                                                            {% if allBook.downloadsFromApp != 0 or allBook.downloadsFromSite != 0 %}
+                                                                                <li> <i class="ti-download"></i> {{ 'front.main.downloads'|trans }} : <strong class="strong6">
+                                                                                        {{ allBook.downloadsFromApp + allBook.downloadsFromSite}}</strong> </li>
+                                                                            {% endif %}
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="thumb-body">
+                                                        <div class="thumb-body-inner mt-1">
+                                                            <a href="#" class="thumb-body-title"><h3 class="h4">{{ allBook.translate().title|length > 60 ? allBook.translate().title|slice(0, 60) ~ ' ... ' : allBook.translate().title }}</h3></a>
+                                                            <a href="#" class="main-color thumb-body-alt mt-1"><i class="ti-user"></i>{% for author in allBook.author %}{{ author.translate().name }}{% endfor %}</a>
+                                                            <div class="thumb-body-controls">
+                                                                <div class="dropdown inline-block">
+                                                                    {% if allBook.collection == false %}
+                                                                        <a href="{{ path('front_book_book_details', {'id': allBook.id}) }}" class="button btn-solid btn-small btn-alt"><i class="ti-book"></i>  {{ 'front.main.read'|trans }}</a>
+                                                                        {#<a class="button btn-borderd-hover btn-small btn-main bg-color-light" href="#" role="button"><i class="ti-download"></i> {{ 'front.main.download'|trans }}</a>#}
+                                                                    {% else %}
+                                                                        <a href="{{ path('front_book_book_details', {'id': allBook.id}) }}" class="button btn-solid btn-small btn-alt"><i class="ti-book"></i>  {{ 'front.main.read'|trans }}</a>
+                                                                        <a class="button btn-solid btn-small btn-orange dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  {{ 'front.main.view_parts'|trans }}<i class="ti-angle-down"></i></a>
+                                                                        <div class="dropdown-menu ">
+                                                                            <ul>
+                                                                                {% for otherPart in globalVarService.getOtherBookParts(allBook.collection) %}
+                                                                                    <li>
+                                                                                        <div class="dropdown-item-block">
+                                                                                            <a href="#" class="thumbnail-item side-thumbnail-item">
+                                                                                                <div class="thumb-head">
+                                                                                                    <div class="thumb-head-inner">
+                                                                                                        <div class="book-thumb" style="width: 50px">
+                                                                                                            <div class="book-cover">
+                                                                                                                <img src="{{ asset(otherPart.photo) }}" alt="{{ allBook.translate().summary }}">
+                                                                                                                <span class="book-cover-mark"></span>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="thumb-body">
+                                                                                                    <div class="thumb-body-inner">
+                                                                                                        <h5>{{ otherPart.translate().title }}</h5>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </a>
+                                                                                        </div>
+                                                                                    </li>
+                                                                                {% endfor %}
+                                                                            </ul>
+                                                                        </div>
+                                                                    {% endif %}
+                                                                </div>
+                                                                <div class="thumb-over-corner-tr">
+                                                                    <a class="fav-ico true styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            <div class="text-center mt-4 mb-4">
+                                {{ knp_pagination_render(allBooks) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% include 'FrontBundle:Main/include:footer.html.twig' %}
+            </section>
+        </div>
+    </div>
+    <!-- End of main-wrapper -->
+    <span class="menu-trigger menu-trigger-overlay"></span>
+    <a class="scrollup"><i class="ti-arrow-up"></i></a>
+    {% include 'FrontBundle:Main/include:login_modal.html.twig' %}
+{% endblock %}

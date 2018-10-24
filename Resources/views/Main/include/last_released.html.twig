@@ -1,0 +1,73 @@
+<div class="swiper-container slider3items mb-5">
+    <div class="card mb-3">
+        <div class="sec-head-title d-flex">
+            <h4 class="color2 strong6 p-3">{{ 'front.main.last_released'|trans }}</h4>
+            <div class="ml-auto p-2">
+                <a class="slider3items-prev-button sliderArrowInHead styled-icon styled-icon--xs styled-icon--round styled-icon--borderd">
+                    <i class="ti-angle-left"></i>
+                </a>
+                <a class="slider3items-next-button sliderArrowInHead styled-icon styled-icon--xs styled-icon--round styled-icon--borderd">
+                    <i class="ti-angle-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="swiper-wrapper">
+
+        {% if lastReleasedBooks is defined %}
+        {% for lastReleasedBook in lastReleasedBooks %}
+            <div class="swiper-slide">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="thumbnail-item side-thumbnail-item">
+                            <div class="thumb-head">
+                                <div class="thumb-head-inner">
+                                    <div class="book-thumb book-thumb-sm">
+                                        <a class="book-cover"
+                                           href="{{ path('front_book_book_details', {'id': lastReleasedBook.id }) }}">
+                                            <img src="{{ asset(lastReleasedBook.photo) }}"
+                                                 alt="{{ lastReleasedBook.translate().summary }}">
+                                            <span class="book-cover-mark"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="thumb-body">
+                                <div class="thumb-body-inner mt-1">
+                                    <a href="{{ path('front_book_book_details', {'id': lastReleasedBook.id }) }}"
+                                       class="thumb-body-title"
+                                       title="{{ lastReleasedBook.translate().title }}">
+                                        <h3 class="h4">
+                                            {{ lastReleasedBook.translate().title|length > 60 ?
+                                            lastReleasedBook.translate().title|slice(0, 60) ~ ' ... ' :
+                                            lastReleasedBook.translate().title }}
+                                        </h3></a>
+                                    {% for author in lastReleasedBook.author %}
+                                        <a href="{{ path('front_main_author_details', {'id': author.id}) }}"
+                                           class="main-color thumb-body-alt mt-1"><i class="ti-user"></i>
+                                            {{ author.translate().name }}
+                                        </a>
+                                    {% endfor %}
+                                    <div class="thumb-body-controls">
+                                        <a href="{{ path('front_book_book_details', {'id': lastReleasedBook.id }) }}"
+                                           class="button btn-solid btn-small btn-alt">
+                                            <i class="ti-book"></i> {{ 'front.main.read'|trans }}</a>
+                                        <div class="thumb-over-corner-tr">
+                                            {% if app.user %}
+                                                <a href="{{ path('front_book_add_favorite', {'id': lastReleasedBook.id}) }}"
+                                                   class="fav-ico true styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                            {% endif %}
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>

@@ -1,0 +1,141 @@
+{% extends ':front:base.html.twig' %}
+
+{% block content %}
+    <body id="body">
+    <!-- class="start-menuHide side-menu-hidden" -->
+    <div class="main-wrapper" id="main-wrapper">
+        {% include 'FrontBundle:Main/include:header.html.twig' %}
+        <div class="main-content">
+            <aside id="side-navigation">
+                <div class="side-navigation-inner">
+                    <h4 class="h5 strong6 main-color p-3 sideMenuHead">
+                        <a href="#" class="styled-icon styled-icon--xs styled-icon--round menu-trigger main-color "> <i class="ti-close"></i> </a>
+                        <a href="#" class="main-logo d-inline-block align-top"> <img src="../assets/img/logo.jpg" alt=""></a>
+                    </h4>
+                    <div class="side-nav">
+                        {% include 'FrontBundle:Main/include:side_menu.html.twig' %}
+                        {% include 'FrontBundle:Main/include:side_nav_tabs.html.twig' %}
+                    </div>
+                </div>
+            </aside>
+            <section id="main-sec">
+                <div id="mainView" class="mainView-normal">
+                    <div class="main-sec-header">
+                        <div class="main-page-header-top p-4">
+                            <div class="page-header-top-title">
+                                <h1 class="h2 mb-0">
+                                <span class="styled-icon styled-icon-imgCenter styled-icon--sm styled-icon--dark"
+                                      style="background-color:#8299e2">
+                                    <i class="ti-layers"></i>
+                                </span>
+                                    <span class="page-header-top-text">Categories</span>
+                                </h1>
+                            </div>
+                            <div class="page-header-top-side mr-auto">
+                                <ul class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">{{ 'front.main_side_menu.home'|trans }}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="main-sec-inner mainView-content p-4">
+                        <div class="row">
+                            {% for parentCategory in globalVarService.getParentCategories(app.request.locale) %}
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="card cat-card mb-4">
+                                    <div class="head-title-alt d-flex p-3">
+                                        <h3 class="h4 strong5">
+                                            <span class="styled-icon styled-icon-imgCenter styled-icon--xs styled-icon--dark ml-1 mr-1" style="background-color:#8299e2">
+                                                <img src="{{ asset('upload/projects/category/'~parentCategory.photo) }}">
+                                            </span> {{ parentCategory.translate.name }}
+                                        </h3>
+
+                                        <span class="rss-item ml-auto">
+                                            <a href="#" class="styled-icon ripple styled-icon--xs bg-color-light">
+                                                <i class="ti-rss-alt"></i>
+                                            </a>
+                                        </span>
+                                    </div>
+
+                                    <div class="cat-scrollBox">
+                                        <ul class="underline-list">
+                                            {% for childCategory in globalVarService.getChildCategories(parentCategory.id) %}
+                                            <li class="panel">
+                                                <a data-toggle="collapse" class="dropdown-toggle collapsed" href="#cat-withSub-{{ childCategory.id }}">
+                                                    {{ childCategory.translate.name }}<i class="sideMenu-arrow ti-angle-up"></i>
+                                                </a>
+
+
+                                                {% if globalVarService.getChildCategories(childCategory.id) is defined and globalVarService.getChildCategories(childCategory.id)|length > 0 %}
+                                                <div id="cat-withSub-{{ childCategory.id }}" class="panel-collapse collapse multiLevels-menu">
+                                                    <ul>
+                                                        {% for childCategory2 in globalVarService.getChildCategories(childCategory.id) %}
+                                                        <li>
+                                                            <div class="ml-item">
+                                                                {% set ChildCategories3 = globalVarService.getChildCategories(childCategory2.id) %}
+                                                                {% if ChildCategories3 is defined and ChildCategories3|length > 0 %}
+                                                                    <span class="mlItem-expand"><i class="ti-plus"></i></span>
+                                                                {% endif %}
+
+                                                                <a href="{{ childCategory2.id }}">{{ childCategory2.translate.name }}</a>
+                                                            </div>
+
+                                                            {% if ChildCategories3 is defined and ChildCategories3|length > 0 %}
+                                                            <ul>
+
+                                                                {% for childCategory3 in ChildCategories3 %}
+                                                                    <li>
+                                                                        <div class="ml-item">
+                                                                            {#<span class="mlItem-expand"><i class="ti-plus"></i></span>#}
+                                                                            <a href="{{ childCategory3.id }}">{{ childCategory3.translate.name }}</a>
+                                                                        </div>
+                                                                    </li>
+                                                                {% endfor %}
+
+                                                                    {#<ul>#}
+                                                                        {#<li>#}
+                                                                            {#<div class="ml-item"><a href="#">level three</a></div>#}
+                                                                        {#</li>#}
+                                                                        {#<li>#}
+                                                                            {#<div class="ml-item">#}
+                                                                                {#<span class="mlItem-expand"><i class="ti-plus"></i></span>#}
+                                                                                {#<a href="#">level three</a>#}
+                                                                            {#</div>#}
+                                                                            {#<ul>#}
+                                                                                {#<li>#}
+                                                                                    {#<div class="ml-item"><a href="#">level Four</a></div>#}
+                                                                                {#</li>#}
+                                                                            {#</ul>#}
+                                                                        {#</li>#}
+                                                                    {#</ul>#}
+                                                            </ul>
+                                                            {% endif %}
+
+                                                        </li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                </div>
+                                                {% endif %}
+
+                                            </li>
+                                          {% endfor %}
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% include 'FrontBundle:Main/include:footer.html.twig' %}
+            </section>
+        </div>
+    </div>
+    <!-- End of main-wrapper -->
+    <span class="menu-trigger menu-trigger-overlay"></span>
+    <a class="scrollup"><i class="ti-arrow-up"></i></a>
+    {% include 'FrontBundle:Main/include:login_modal.html.twig' %}
+{% endblock %}

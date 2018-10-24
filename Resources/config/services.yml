@@ -1,0 +1,15 @@
+services:
+    global_var.service:
+        class: FrontBundle\Service\GlobalVars
+        calls:
+            - [setContainer, ['@service_container']]
+
+    front.service:
+        class: FrontBundle\Service\FrontService\FrontService
+        calls:
+            - [setContainer, ['@service_container']]
+
+    front.security.authentication_handler:
+        class: FrontBundle\Service\AuthenticationHandler
+        public: false
+        arguments: [ '@router', '@session' ]

@@ -1,0 +1,79 @@
+
+.bg-color, .btn-solid.btn-main, .btn-borderd-hover.btn-main:hover, .tt-suggestion:hover, .tt-suggestion.tt-cursor, .nav-icon span,
+.nav.top-viewsin-nav li.active>a, .mainTitleHead ul li.active,
+.select2-container--default .select2-results__option--highlighted[aria-selected], .select2-container--classic .select2-results__option--highlighted[aria-selected],
+.select2-container--classic.select2-container--open .select2-dropdown, .socials--solid a,
+.mainView-normal li a.mainView-normal-trig, .mainView-list li a.mainView-list-trig, .mainView-compact li a.mainView-compact-trig,
+.nav-pills .nav-link.active, .show>.nav-pills .nav-link,
+.page-item.active .page-link,
+.audio-player .jw-skin-seven .jw-icon-playback:hover,
+.audio-player .jw-skin-seven .jw-progress, .main-slider-item, .main-border .slimScrollBar,
+.sliderArrowInHead:not(.swiper-button-disabled):hover{
+    background-color: #246eb9;
+}
+.card.card-mainColor .slimScrollBar{
+    background-color: #246eb9 !important;
+}
+
+.btn-borderd.btn-main:before, .ripple:before{
+    background-image: radial-gradient(circle, #246eb9 10%, transparent 5%);
+}
+.btn-borderd.btn-main, .btn-borderd-hover.btn-main, .mainTitleHead,
+.form-input>input:not([type="submit"]):focus, .select2-container--classic .select2-selection--single:focus,
+.select2-container--classic.select2-container--open .select2-selection--single, .select2-container--classic .select2-selection--multiple:focus,
+.select2-container--classic.select2-container--open .select2-selection--multiple, .bg-color-light,
+.page-item.active .page-link, .card.main-border, .card-mainColor .nav-lines .nav-link.active, .card-mainColor{
+    border-color: #246eb9;
+}
+
+.text-primary, a.text-primary:hover, .main-color, .btn-borderd.btn-main, .btn-borderd-hover.btn-main, .styled-icon.bg-color-light,
+.custom-player .jw-skin-seven .jw-playlist-container .jw-label .jw-icon-play, .custom-player .jw-skin-seven .jw-playlist-container .jw-active-option .jw-name,
+.custom-player .jw-skin-seven .jw-playlist-container .jw-option:hover .jw-label, .jw-skin-seven .jw-playlist-container .jw-option:hover .jw-name,
+.card-mainColor .nav-lines .nav-link.active, .underline-list li.active a, .underline-list li.active a, .underline-list li.current a{
+    color: #246eb9;
+}
+
+
+
+/*
+   2nd color
+*/
+
+#search-block .search-submit, .meta-tags li a:hover, .btn-solid.btn-alt, .btn-borderd-hover.btn-alt:hover, .bg-alt, .scrollup,
+.side-menu-nav.nav-pills .nav-link.active{
+    background: #50b848;
+}
+.btn-borderd.btn-alt, .btn-borderd-hover.btn-alt, .side-menu-nav.nav-pills a.nav-link,
+.mainSearch .form-control-icon .form-control, .btn-solid.bg-color2, .nav-lines .nav-link.active,
+.selectAll .checkbox input[type=checkbox].css-checkbox + label.css-label:after, .book-bgs a.styled-icon.active{
+    border-color: #50b848;
+}
+.btn-borderd.btn-alt, .btn-borderd-hover.btn-alt, .color2, .mainSearch .form-control-icon .input-icon, .nav-lines .nav-link.active,
+.ui-autocomplete-category, .multiLevels-menu li a:hover{
+    color: #50b848;
+}
+#side-navigation a:before, .btn-borderd.btn-alt:before{
+    background-image: radial-gradient(circle, #50b848 10%, transparent 5%);
+}
+
+.slimScrollBar, .dropdown-item.active, .dropdown-item:active{
+    background-color: #50b848 !important;
+}
+
+.btn-borderd.btn-main, .btn-borderd-hover.btn-main, .styled-icon.bg-color-light, .bg-color-light, .multiLevels-menu li .ml-item-ico{
+    background-color: #f6f9fc;
+}
+
+.bg-color-light2, .bookViewHead-block .button:hover, .underline-list li.current, .bookViewHead, .book-categories{
+    background-color: #f6f9fc;
+}
+
+
+
+
+input[type=checkbox].css-checkbox:checked + label.css-label:after, input[type=radio].css-radio:checked + label.css-radioLabel:after,
+body .ui-state-active, body .ui-widget-content .ui-state-active, body .ui-widget-header .ui-state-active, body a.ui-button:active, body .ui-button:active, body .ui-button.ui-state-active:hover{
+    color: #fff;
+    border-color: #50b848;
+    background-color: #50b848;
+}

@@ -1,0 +1,41 @@
+<div class="col-lg-4 col-md-12 mb-4">
+    <div class="card">
+        <div class="head-title p-3 d-flex">
+            <h4 class="main-color strong5">{{ 'front.main.new_articles'|trans }}</h4>
+            <a href="{{ path('front_main_new_articles') }}" class="ml-auto">{{ 'front.main.more'|trans }} <i class="ti-angle-right"></i></a>
+        </div>
+        <div class="blog-list scroll-hide2load" style="height: 315px">
+            <ul class="thumbnails-list">
+                {% if newArticles is defined %}
+                {% for newArticle in newArticles %}
+                    <li>
+                        <div class="thumbnail-item side-thumbnail-item">
+                            <a href="#" class="thumb-head blog-thumb-head">
+                                <div class="thumb-head-inner">
+                                    <div class="thumbnail-img thumbnail-img-h100">
+                                        {% if newArticle.photo %}
+                                            <img src="{{ asset(newArticle.photo) }}" alt="image descriptions">
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="thumb-body">
+                                <div class="thumb-body-inner">
+                                    <a href="{{ path('front_main_article_details', {'id':newArticle.id}) }}" class="block"><h4 class="h5">{{ newArticle.title|trans }}</h4></a>
+                                    <div class="mt-2">
+                                        <small class="text_gray">14/3/1438 Hijri</small>
+                                    </div>
+                                    <div class="mt-2">
+                                        <a href="#" class="color2"><i class="ti-user"></i>{{ newArticle.author }}</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                {% endfor %}
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>

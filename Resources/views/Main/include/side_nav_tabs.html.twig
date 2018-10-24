@@ -1,0 +1,134 @@
+<div class="side-menu-navTabs mb-4">
+    <ul class="side-menu-nav nav nav-pills nav-fill justify-content-center mb-2" id="sideNav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="pill" href="#sideNav-category-tab">{{ 'front.side_tab_nav.categories'|trans }}</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#sideNav-authors-tab">{{ 'front.side_tab_nav.authors'|trans }}</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#sideNav-translators-tab">{{ 'front.side_tab_nav.translators'|trans }}</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane fade show active" id="sideNav-category-tab" role="tabpanel" >
+            <ul class="side-menu" id="side-menu">
+                {#<li class="panel">#}
+                    {#<a data-toggle="collapse" class="sideMenu-link collapsed" data-parent="#side-menu" href="#the-menu-id-here-1">#}
+                        {#<span class="sideMenu-ico" style="background-color:#a5cd7c"><img src="../uploads/icons/quran.svg"></span> Quran Kareem<i class="sideMenu-arrow ti-angle-up"></i>#}
+                    {#</a>#}
+                    {#<div id="the-menu-id-here-1" class="panel-collapse collapse multiLevels-menu">#}
+                        {#<ul>#}
+                            {#<li>#}
+                                {#<div class="ml-item">#}
+                                    {#<span class="mlItem-expand"><i class="ti-plus"></i></span>#}
+                                    {#<a href="#">level one</a>#}
+                                {#</div>#}
+                                {#<ul>#}
+                                    {#<li>#}
+                                        {#<div class="ml-item">#}
+                                            {#<span class="mlItem-expand"><i class="ti-plus"></i></span>#}
+                                            {#<a href="#">level three</a>#}
+                                        {#</div>#}
+                                        {#<ul>#}
+                                            {#<li>#}
+                                                {#<div class="ml-item"> <a href="#">level three</a></div>#}
+                                            {#</li>#}
+                                            {#<li>#}
+                                                {#<div class="ml-item">#}
+                                                    {#<span class="mlItem-expand"><i class="ti-plus"></i></span>#}
+                                                    {#<a href="#">level three</a>#}
+                                                {#</div>#}
+                                                {#<ul>#}
+                                                    {#<li><div class="ml-item"> <a href="#">level Four</a></div></li>#}
+                                                    {#<li><div class="ml-item"> <a href="#">level Four</a></div></li>#}
+                                                    {#<li><div class="ml-item"> <a href="#">level Four</a></div></li>#}
+                                                    {#<li><div class="ml-item"> <a href="#">level Four</a></div></li>#}
+                                                    {#<li><div class="ml-item"> <a href="#">level Four</a></div></li>#}
+                                                    {#<li><div class="ml-item"> <a href="#">level Four</a></div></li>#}
+                                                    {#<li><div class="ml-item"> <a href="#">level Four</a></div></li>#}
+                                                {#</ul>#}
+                                            {#</li>#}
+                                            {#<li><div class="ml-item"> <a href="#">level three</a></div></li>#}
+                                        {#</ul>#}
+                                    {#</li>#}
+                                    {#<li><div class="ml-item"> <a href="#">المستوى الثاني</a></div></li>#}
+                                {#</ul>#}
+                            {#</li>#}
+
+                            {#<li><div class="ml-item"> <a href="#">Level One</a></div></li>#}
+                            {#<li><div class="ml-item"> <a href="#">Other Title</a></div></li>#}
+                            {#<li><div class="ml-item"> <a href="#">Arkan Al Iman</a></div></li>#}
+
+                        {#</ul>#}
+                    {#</div>#}
+                {#</li>#}
+
+
+                {% for category in globalVarService.getCategories(app.request.locale) %}
+                    <li class="panel">
+                        <a data-toggle="collapse" class="sideMenu-link collapsed" data-parent="#side-menu" href="#the-menu-id-here-2">
+                            <span class="sideMenu-ico icon-quran" style="background-color:#8299e2">
+                                <img src="{{ asset('upload/projects/category/'~category.photo) }}">
+                            </span>
+                            {{ category.translate.name }}
+                            <i class="sideMenu-arrow ti-angle-up"></i>
+                        </a>
+
+                        {#<div id="the-menu-id-here-2" class="panel-collapse collapse">#}
+                            {#<ul class="category-submenu">#}
+                                {#{% for childrenCategory in globalVarService.getCategories(app.request.locale) %}#}
+                                    {#<li><a href="#"><i class="ti-angle-right"></i>{{ childrenCategory.translate().name }}</a></li>#}
+                                    {#<li><a href="#"><i class="ti-angle-right"></i>Arkan Al Iman</a></li>#}
+                                {#{% endfor %}#}
+                            {#</ul>#}
+                        {#</div>#}
+
+                    </li>
+
+                {% endfor %}
+
+                <li><a href="{{ path('front_main_categories') }}" class="sideMenu-link strong6 color2">
+                        {{ 'front.main.all_categories'|trans }} <i class="sideMenu-arrow ti-angle-right"></i>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="tab-pane fade" id="sideNav-authors-tab" role="tabpanel">
+
+            {#<div class="pr-3 pl-3 mb-1 mt-2">#}
+                {#<div class="form-control-icon form-control-small">#}
+                    {#<span class="input-icon"><i class="ti-search"></i></span>#}
+                    {#<input type="text" class="form-control" id="search-inAuthors" placeholder="Search for an author">#}
+                {#</div>#}
+            {#</div>#}
+            <ul class="nav flex-column side-menu-users">
+                {% for author in globalVarService.getAuthors(app.request.locale)  %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('front_main_author_details', {'id': author.id}) }}"><i class="ti-user"></i>
+                        {{ author.name }}</a>
+                    </li>
+                {% endfor %}
+                <li class="nav-item"> <a class="sideMenu-link nav-link strong6 color2" href="{{ path('front_main_authors') }}">
+                        View all Authors <i class="sideMenu-arrow ti-angle-left"></i></a> </li>
+            </ul>
+        </div>
+        <div class="tab-pane fade" id="sideNav-translators-tab" role="tabpanel">
+            {#<div class="pr-3 pl-3 mb-1 mt-2">#}
+                {#<div class="form-control-icon form-control-small">#}
+                    {#<span class="input-icon"><i class="ti-search"></i></span>#}
+                    {#<input type="text" class="form-control" id="search-translators" placeholder="Search for a translator">#}
+                {#</div>#}
+            {#</div>#}
+            <ul class="nav flex-column side-menu-users">
+                {% for translator in globalVarService.getTranslators(app.request.locale) %}
+                    <li class="nav-item"> <a class="nav-link" href="{{ path('front_main_translator_details', {'id': translator.id}) }}"><i class="ti-user"></i>
+                        {{ translator.name }}</a> </li>
+                {% endfor %}
+                <li class="nav-item"> <a class="sideMenu-link nav-link strong6 color2" href="{{ path('front_main_translators') }}">
+                        View all Translators <i class="sideMenu-arrow ti-angle-left"></i></a> </li>
+            </ul>
+        </div>
+    </div>
+</div>

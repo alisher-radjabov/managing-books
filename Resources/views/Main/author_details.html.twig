@@ -1,0 +1,244 @@
+{% extends ':front:base.html.twig' %}
+
+{% block content %}
+
+    <body id="body">
+    <!-- class="start-menuHide side-menu-hidden" -->
+    <div class="main-wrapper" id="main-wrapper">
+        {% include 'FrontBundle:Main/include:header.html.twig' %}
+        <div class="main-content">
+            <aside id="side-navigation">
+                <div class="side-navigation-inner">
+                    <h4 class="h5 strong6 main-color p-3 sideMenuHead">
+                        <a href="#" class="styled-icon styled-icon--xs styled-icon--round menu-trigger main-color "> <i
+                                    class="ti-close"></i> </a>
+                        <a href="#" class="main-logo d-inline-block align-top"> <img src="../assets/img/logo.jpg"
+                                                                                     alt=""></a>
+                    </h4>
+                    <div class="side-nav">
+                        {% include 'FrontBundle:Main/include:side_menu.html.twig' %}
+                        {% include 'FrontBundle:Main/include:side_nav_tabs.html.twig' %}
+                    </div>
+                </div>
+            </aside>
+
+            <section id="main-sec">
+
+                <div id="mainView">
+                    {% for author in authorDetails %}
+                        <div class="author-header">
+                            <div class="container">
+                                <ul class="breadcrumb mb-4 mt-4">
+                                    <li class="breadcrumb-item"><a href="{{ path('admin_main_home') }}">{{ 'admin.titles.home'|trans }}</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ path('front_main_authors') }}">{{ 'front.main_side_menu.authors'|trans }}</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">{{ author.name }}</li>
+                                </ul>
+                                <div class="card p-4">
+                                    <div class="thumbnail-item side-thumbnail-item">
+                                        <div class="thumb-head">
+                                            <div class="thumb-head-inner">
+                                                <div class="thumbnail-img main-user-img thumbnail-img-h100">
+                                                    <img src="{{ asset(author.photo) }}" alt="image descriptions">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="thumb-body">
+                                            <div class="thumb-body-inner mr-2 ml-2">
+                                                <h1 class="h3 strong6 main-color mb-2"> {{ author.name }}</h1>
+                                                <div class="block strong6 mb-3">{{ 'smartlib.titles.person.number_of_authorized_books'|trans }} :
+                                                    {{ globalVarService.getAuthorBooksCount(author.id) }}
+                                                </div>
+                                                <article>
+                                                    <p class="mb-3">
+                                                        {{ author.resume|striptags }}
+                                                    </p>
+                                                </article>
+                                                <a href="#" class="button btn-solid btn-mid btn-alt mt-3">{{ 'front.main.follow'|trans }}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <div class="book-content mainView-normal">
+                        <div class="container">
+                            <div class="card mb-4">
+                                <div class="head-title p-3">
+                                    <h4 class="main-color strong6">
+                                        {{ 'front.main.number_of_authors_books'|trans }}:
+                                        {% for author in authorDetails %}
+                                            {{ globalVarService.getAuthorBooksCount(author.id) }}
+                                        {% endfor %}
+                                    </h4>
+                                </div>
+                                <div class="p-4">
+                                    <ul class="row tight-row">
+                                        {% for authorBook in authorBooks %}
+                                            <li class="col-lg-4 col-md-6 col-sm-12 mainView-item">
+                                                <div class="card mainView-card mb-3">
+                                                    <div class="card-body">
+                                                        <div class="thumbnail-item side-thumbnail-item">
+                                                            <div class="thumb-head">
+                                                                <div class="thumb-head-inner">
+                                                                    <div class="book-thumb book-thumb-sm book-withParts">
+                                                                        {% if authorBook.collection %}
+                                                                            <div class="book-parts-patch">
+                                                                                <span>{{ globalVarService.getOtherBookPartsCount(authorBook.collection) }} {{ 'front.main.parts'|trans }}</span>
+                                                                            </div>
+                                                                        {% endif %}
+                                                                        <a class="book-cover" href="#">
+                                                                            <img src="{{ asset(authorBook.photo) }}"
+                                                                                 alt="book-descriptions">
+                                                                            <span class="book-cover-mark"></span>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="thumb-body">
+                                                                <div class="thumb-body-inner mt-1">
+                                                                    <a href="#" class="thumb-body-title"><h3
+                                                                                class="h4">{{ authorBook.translate().title }}</h3>
+                                                                    </a>
+                                                                    {% if authorBook.collection %}
+                                                                        <a href="#"
+                                                                           class="main-color thumb-body-alt mt-1"><i
+                                                                                    class="ti-user"></i>
+                                                                            {% for author in authorBook.author %}
+                                                                                {{ author.translate().name }}
+                                                                            {% endfor %}
+                                                                        </a>
+                                                                    {% else %}
+                                                                        <a href="{{ path('front_book_book_details', {'id': authorBook.id}) }}" class="button btn-solid btn-small btn-alt"><i class="ti-book"></i>{{ 'front.main.read'|trans }}</a>
+                                                                        {#<a class="button btn-borderd-hover btn-small btn-main bg-color-light" href="#" role="button">#}
+                                                                            {#<i class="ti-download"></i>{{ 'front.main.download'|trans }}</a>#}
+                                                                    {% endif %}
+                                                                    {% if authorBook.collection %}
+                                                                        <div class="thumb-body-controls">
+                                                                            <div class="dropdown inline-block"><a
+                                                                                        class="button btn-solid btn-small btn-orange dropdown-toggle"
+                                                                                        data-toggle="dropdown"
+                                                                                        aria-haspopup="true"
+                                                                                        aria-expanded="false">{{ 'front.main.view_parts'|trans }}
+                                                                                    <i class="ti-angle-down"></i></a>
+                                                                                <div class="dropdown-menu dropdown-menu-right">
+                                                                                    <ul>
+                                                                                        {% for otherBookPart in globalVarService.getOtherBookParts(authorBook.collection) %}
+                                                                                            <li>
+                                                                                                <div class="dropdown-item-block">
+                                                                                                    <a href="#"
+                                                                                                       class="thumbnail-item side-thumbnail-item">
+                                                                                                        <div class="thumb-head">
+                                                                                                            <div class="thumb-head-inner">
+                                                                                                                <div class="book-thumb"
+                                                                                                                     style="width: 50px">
+                                                                                                                    <div class="book-cover">
+                                                                                                                        <img src="{{ asset(otherBookPart.photo) }}"
+                                                                                                                             alt="book-descriptions">
+                                                                                                                        <span class="book-cover-mark"></span>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div class="thumb-body">
+                                                                                                            <div class="thumb-body-inner">
+                                                                                                                {#<div class="text_orange mt-2">part</div>#}
+                                                                                                                <h5>{{ otherBookPart.translate().title }}</h5>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </a>
+                                                                                                </div>
+                                                                                            </li>
+                                                                                        {% endfor %}
+                                                                                    </ul>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="thumb-over-corner-tr">
+                                                                                <a class="fav-ico true styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                                                            </div>
+                                                                        </div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card mb-4">
+                                <div class="head-title p-3">
+                                    <h4 class="main-color strong6">{{ 'front.main.number_of_translated_books'|trans }} :
+                                        {% for author in authorDetails %}
+                                            {{ globalVarService.getTranslatorBooksCount(author.id) }}
+                                        {% endfor %}
+                                    </h4>
+                                </div>
+                                <div class="p-4">
+                                    <ul class="row tight-row">
+                                        {% for translatedBook in translatorBooks %}
+                                            <li class="col-lg-4 col-md-6 col-sm-12 mainView-item">
+                                                <div class="card mainView-card mb-3">
+                                                    <div class="card-body">
+                                                        <div class="thumbnail-item side-thumbnail-item">
+                                                            <div class="thumb-head">
+                                                                <div class="thumb-head-inner">
+                                                                    <div class="book-thumb book-thumb-sm">
+                                                                        <a class="book-cover" href="#">
+                                                                            <img src="{{ asset(translatedBook.photo) }}"
+                                                                                 alt="book-descriptions">
+                                                                            <span class="book-cover-mark"></span>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="thumb-body">
+                                                                <div class="thumb-body-inner mt-1">
+                                                                    <a href="#" class="thumb-body-title"><h3
+                                                                                class="h4">{{ translatedBook.translate().title }}</h3>
+                                                                    </a>
+                                                                    <a href="#"
+                                                                       class="main-color thumb-body-alt mt-1"><i
+                                                                                class="ti-user"></i>
+                                                                        {% for author in translatedBook.author %}
+                                                                            {{ author.translate().name }}
+                                                                        {% endfor %}
+                                                                    </a>
+                                                                    <div class="thumb-body-controls">
+                                                                        <a href="{{ path('front_book_book_details', {'id': translatedBook.id}) }}"
+                                                                           class="button btn-solid btn-small btn-alt"><i
+                                                                                    class="ti-book"></i>{{ 'front.main.read'|trans }}
+                                                                        </a>
+                                                                        {#<a class="button btn-borderd-hover btn-small btn-main bg-color-light"#}
+                                                                           {#href="#" role="button"><i#}
+                                                                                    {#class="ti-download"></i>{{ 'front.main.download'|trans }}#}
+                                                                        {#</a>#}
+                                                                        <div class="thumb-over-corner-tr">
+                                                                            <a class="fav-ico  styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% include 'FrontBundle:Main/include:footer.html.twig' %}
+            </section>
+        </div>
+    </div>
+    <!-- End of main-wrapper -->
+    <span class="menu-trigger menu-trigger-overlay"></span>
+    <a class="scrollup"><i class="ti-arrow-up"></i></a>
+    {% include 'FrontBundle:Main/include:login_modal.html.twig' %}
+{% endblock %}

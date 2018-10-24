@@ -1,0 +1,45 @@
+<div class="col-lg-8 col-md-12 mb-4">
+    <div class="swiper-container main-slider">
+        <div class="swiper-wrapper">
+            {% if sliders is defined %}
+            {% for slider in sliders %}
+                <div class="swiper-slide">
+                    <div class="main-slider-item" style="background-image: url('{{ asset('upload/slider/'~slider.photo) }}')">
+                        <div class="parallax-over thumb-over thumb-over-inners">
+                            <div class="thumb-over-center-mid">
+                                <div class="thumb-over-center-mid-inner">
+                                    <div class="thumbnail-item side-thumbnail-item slider-book">
+                                        <div class="thumb-head">
+                                            <div class="thumb-head-inner">
+                                                <div class="book-thumb">
+                                                    <div class="book-cover">
+                                                        <img src="{{ asset(slider.book.photo) }}?{{ uniq_id() }}" alt="book-descriptions">
+                                                        <span class="book-cover-mark"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="thumb-body">
+                                            <div class="thumb-body-inner">
+                                                <h3 class="mb-4">{{ slider.sliderName }}</h3>
+                                                <h1 class="strong6">{{ slider.book }}</h1>
+                                                <div class="mt-5">
+                                                    <a class="button btn-solid btn-big btn-white"
+                                                       href="{{ path('front_book_book_details', {'id': slider.book.id}) }}" role="button">{{ 'ad.titles.view_details'|trans }}</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+        <div class="swiper-pagination swiper-pagination-white"></div>
+        <div class="swiper-button-next slider-next-button swiper-button-white"></div>
+        <div class="swiper-button-prev slider-prev-button swiper-button-white"></div>
+    </div>
+</div>

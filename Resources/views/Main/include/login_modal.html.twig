@@ -1,0 +1,135 @@
+<!-- Login Modal -->
+<div class="modal fade effect-3dflip" id="loginModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+            <div id="login-form1">
+                <div class="modal-header">
+                    <h2>
+                        <span class="styled-icon styled-icon--xs styled-icon--dark bg-alt mr-1 ml-1"><i
+                                    class="ti-user"></i></span>
+                        {{ 'front.register.login'|trans }}
+                    </h2>
+                </div>
+                <div class="modal-body">
+                    <div class="row tight-row mb-4">
+                        <div class="col-sm-12">
+                            <button type="button" class="button btn-solid btn-block facebook" id="login-with-facebook">
+                                <i class="ti-facebook"></i> {{ 'front.register.by_facebook'|trans }}
+                            </button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button type="button" class="button btn-solid btn-block twitter mt-2"
+                                    id="login-with-twitter"><i
+                                        class="ti-twitter"></i> {{ 'front.register.by_twitter'|trans }}
+                            </button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button type="button" class="button btn-solid btn-block gplus mt-2" id="login-with-google">
+                                <i class="ti-google"></i> {{ 'front.register.by_google'|trans }}
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- User LOGIN FORM #################################################### -->
+
+                    <form id="login-form" class="mt-4 mb-4" action="{{ path('fos_user_security_check') }}" method="post">
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
+                        <div class="text-divider mb-3">
+                            <div class="strong6">{{ 'front.register.by_email'|trans }}</div>
+                        </div>
+                        <div class="form-group mb-2">
+                            <div class="form-control-icon">
+                                <span class="input-icon"><i class="ti-email"></i></span>
+                                <input type="text" class="form-control" id="thelogin-mail" name="_username"
+                                       placeholder="Email : email@email.com">
+                            </div>
+                        </div>
+                        <div class="form-group mb-2">
+                            <div class="form-control-icon">
+                                <span class="input-icon"><i class="ti-lock"></i></span>
+                                <input type="password" class="form-control" id="thelogin-pass" name="_password"
+                                       placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between mt-3">
+                            <div class="checkbox">
+                                <input class="css-checkbox" type="checkbox" name="remember-me" id="gridCheck1"
+                                       name="_remember_me" value="option1">
+                                <label for="gridCheck1"
+                                       class="css-label">{{ 'front.register.remember_me'|trans }}</label>
+                            </div>
+                            <div class="forget-pass"><a href="#">{{ 'front.register.forgot_password'|trans }}</a></div>
+                        </div>
+                            <button type="submit" class="button btn-solid btn-alt btn-block btn-big mt-4" name="_submit" id="_submit">
+                                {{ 'front.register.login'|trans }}
+                            </button>
+                    </form>
+
+                    <!-- End of USER LOGIN FORM #################################################### -->
+
+                    <div class="text-divider mb-3">
+                        <div class="strong6">{{ 'front.register.create_new_account'|trans }}</div>
+                    </div>
+                    <a href="{{ path('front_user_register') }}" class="button btn-borderd btn-main btn-block btn-big mt-3">
+                            {{ 'front.register.register'|trans }}
+                    </a>
+                </div>
+            </div>
+            <div id="forgetPass-form" style="display: none">
+                <div class="modal-header">
+                    <h2>
+                        <span class="styled-icon styled-icon--xs styled-icon--dark bg-alt mr-1 ml-1"><i
+                                    class="ti-unlock"></i></span>
+                        {{ 'front.register.recover_password'|trans }}
+                    </h2>
+                </div>
+                <div class="modal-body">
+                    <form id="resetting-form" action="{{ path('fos_user_resetting_request') }}" method="POST">
+                        <div class="form-control-icon">
+                            <span class="input-icon"><i class="ti-email"></i></span>
+                            <input type="text" class="form-control" id="forget-mail" placeholder="Email: email@email.com">
+                        </div>
+                        <div class="d-flex justify-content-between mt-3">
+                            <button type="submit"
+                                    class="button btn-borderd bg-color-light">{{ 'front.register.send_password'|trans }}</button>
+                            <div class="forget-pass"><a href="#">{{ 'front.register.back_to_login'|trans }}</a></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://apis.google.com/js/api:client.js"></script>
+<script>
+    var googleUser = {};
+
+    var startApp = function () {
+        gapi.load('auth2', function () {
+            // Retrieve the singleton for the GoogleAuth library and set up the client.
+            auth2 = gapi.auth2.init({
+                client_id: '516671154961-2r73etsqd2nnk0bful2ml36b5t6h9755.apps.googleusercontent.com',
+                cookiepolicy: 'single_host_origin',
+                // Request scopes in addition to 'profile' and 'email'
+                //scope: 'additional_scope'
+            });
+            attachSignin(document.getElementById('login-with-google'));
+        });
+    };
+
+    function attachSignin(element) {
+        auth2.attachClickHandler(element, {},
+            function (googleUser) {
+                document.getElementById('name').innerText = "Signed in: " +
+                    googleUser.getBasicProfile().getName();
+            }, function (error) {  });
+    }
+
+</script>
+
+<script>
+    startApp();
+</script>

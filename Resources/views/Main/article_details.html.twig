@@ -1,0 +1,92 @@
+{% extends ':front:base.html.twig' %}
+
+{% block content %}
+
+    <body id="body">
+    <!-- class="start-menuHide side-menu-hidden" -->
+
+    <div class="main-wrapper" id="main-wrapper">
+
+        {% include 'FrontBundle:Main/include:header.html.twig' %}
+
+        <div class="main-content">
+
+            <aside id="side-navigation">
+                <div class="side-navigation-inner">
+
+                    <h4 class="h5 strong6 main-color p-3 sideMenuHead">
+                        <a href="#" class="styled-icon styled-icon--xs styled-icon--round menu-trigger main-color "> <i
+                                    class="ti-close"></i> </a>
+                        <a href="#" class="main-logo d-inline-block align-top"> <img src="../assets/img/logo.jpg" alt=""></a>
+                    </h4>
+                    <div class="side-nav">
+                        {% include 'FrontBundle:Main/include:side_menu.html.twig' %}
+                        {% include 'FrontBundle:Main/include:side_nav_tabs.html.twig' %}
+                    </div>
+                </div>
+            </aside>
+            <section id="main-sec">
+                <div id="mainView" class="mainView-normal">
+                    <div class="main-sec-header">
+                        <div class="main-page-header-top p-4">
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a
+                                            href="{{ path('front_main_index') }}">{{ 'front.main_side_menu.home'|trans }}</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">{{ 'front.main.new_articles'|trans }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="main-sec-inner mainView-content p-4">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-12 mb-4">
+                                <div class="card articleCard">
+                                    <article>
+                                        {% for article in articleDetails %}
+                                            <div class="row">
+                                                <div class="col-lg-3 col-md-3 col-sm-12">
+                                                    <div class="thumb-head" style="width: 100%">
+                                                        <div class="thumb-head-inner">
+                                                            <div class="thumbnail-img thumbnail-img-h100">
+                                                                <img src="{{ asset(article.photo) }}"
+                                                                     alt="image descriptions">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <h1 class="strong5 main-color mb-3">{{ article.title|striptags }}</h1>
+                                                    <div class="d-flex">
+                                                        <div>
+                                                            <a href="#" class="color2 block">{{ article.author }}</a>
+                                                            <small class="text_gray"></small>
+                                                        </div>
+                                                        <small class="text_gray mr-auto text-nowrap"><i
+                                                                    class="ti-calendar"></i> {{ article.createdAt|date('Y-m-d H:i:s') }}
+                                                        </small>
+                                                    </div>
+                                                    <div class="post-container mt-4">
+                                                        {{ article.description|striptags }}
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        {% endfor %}
+                                    </article>
+                                </div>
+                            </div>
+                            {% include 'FrontBundle:Main/include:new_articles.html.twig' %}
+                        </div>
+                    </div>
+                </div>
+                {% include 'FrontBundle:Main/include:footer.html.twig' %}
+            </section>
+        </div>
+    </div>
+
+    <!-- End of main-wrapper -->
+    <span class="menu-trigger menu-trigger-overlay"></span>
+    <a class="scrollup"><i class="ti-arrow-up"></i></a>
+
+    {% include 'FrontBundle:Main/include:login_modal.html.twig' %}
+
+{% endblock %}

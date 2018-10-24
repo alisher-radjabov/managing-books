@@ -1,0 +1,125 @@
+{% extends ':front:base.html.twig' %}
+
+{% block content %}
+
+    <body id="body">
+    <!-- class="start-menuHide side-menu-hidden" -->
+    <div class="main-wrapper" id="main-wrapper">
+        {% include 'FrontBundle:Main/include:header.html.twig' %}
+        <div class="main-content">
+            <aside id="side-navigation">
+                <div class="side-navigation-inner">
+                    <h4 class="h5 strong6 main-color p-3 sideMenuHead">
+                        <a href="#" class="styled-icon styled-icon--xs styled-icon--round menu-trigger main-color "> <i class="ti-close"></i> </a>
+                        <a href="#" class="main-logo d-inline-block align-top"> <img src="../assets/img/logo.jpg" alt=""></a>
+                    </h4>
+                    <div class="side-nav">
+                        {% include 'FrontBundle:Main/include:side_menu.html.twig' %}
+                        {% include 'FrontBundle:Main/include:side_nav_tabs.html.twig' %}
+                    </div>
+                </div>
+            </aside>
+            <section id="main-sec">
+                <div id="mainView" class="mainView-normal">
+                    <div class="main-sec-header">
+                        <div class="main-page-header-top p-4">
+                            <div class="page-header-top-title">
+                                <h1 class="h2 mb-0">
+                                    <span class="styled-icon styled-icon-imgCenter styled-icon--sm styled-icon--dark" style="background-color:#1851f3">
+                                        <img src="{{ asset('bundles/front/img/icons/author.svg') }}">
+                                    </span>
+                                    <span class="page-header-top-text">{{ 'front.main_side_menu.authors'|trans }}</span>
+                                </h1>
+                            </div>
+                            <div class="page-header-top-side mr-auto">
+                                <ul class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="{{ path('front_main_index') }}">{{ 'front.main_side_menu.home'|trans }}</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">{{ 'front.side_tab_nav.authors'|trans }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="main-page-header-bottom head-title no-padding">
+                            <div class="sorting-head">
+                                <div class="sorting-head-inner">
+                                    <div class="form-control-icon">
+                                        <span class="input-icon"><i class="ti-arrows-vertical"></i></span>
+                                        <select class="select-filter-nosearch form-control input-lg" id="sort_by_author">
+                                            <option value="0" selected>{{ 'front.menu.sort_by'|trans }}: </option>
+                                            <option value="name">{{ 'front.menu.name'|trans }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="mainView-toggles">
+                                <li><a class="mainView-normal-trig"><i class="ti-view-grid"></i></a></li>
+                                <li><a class="mainView-list-trig"><i class="ti-view-list"></i></a></li>
+                                <li><a class="mainView-compact-trig"><i class="ti-align-justify"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="main-sec-inner mainView-content p-4">
+                        <div class="page-cards">
+                            <ul class="row tight-row">
+                                {% for author in authors %}
+                                    <li class="col-lg-6th col-lg-3 col-md-4 col-sm-6 col-xs-6 mainView-item user-item">
+                                        <div class="card mainView-card mb-3">
+                                            <div class="card-body">
+                                                <div class="thumbnail-item">
+                                                    <div class="thumb-head">
+                                                        <div class="thumb-head-inner">
+                                                            <a href="{{ path('front_main_author_details', {'id': author.id}) }}" class="styled-icon styled-icon--lg styled-icon--borderd styled-icon--round bg-color-light styled-icon-img mb-2">
+                                                                {% if author.photo %}
+                                                                    <img src="{{ asset(author.photo) }}" alt="{{ author.resume }}" />
+                                                                {% endif %}
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="thumb-body">
+                                                        <div class="thumb-body-inner mt-1">
+                                                            <a href="#" class="thumb-body-title"><h4 class="h5">{{ author.name }}</h4></a>
+                                                            <a href="#" class="main-color strong6 thumb-body-alt mt-1">
+                                                                {% if globalVarService.getAuthorBooksCount(author.id) > 1 %}
+                                                                    {{ globalVarService.getAuthorBooksCount(author.id) }} {{ 'front.main.books'|trans }}
+                                                                {% else  %}
+                                                                    {{ globalVarService.getAuthorBooksCount(author.id) }} {{ 'front.main.book'|trans }}
+                                                                {% endif %}
+                                                            </a>
+                                                            <div class="thumb-body-controls">
+                                                                {#{% if authorFollowed.follower == false %}#}
+                                                                    <a href="{{ path('front_user_follow_author', {'id': author.id }) }}"
+                                                                       class="button btn-solid btn-small btn-alt">{{ 'front.main.follow'|trans }}</a>
+                                                                {#{% else %}#}
+
+                                                                {#{% if app.user %}#}
+                                                                    {#<a href="{{ path('front_user_unfollow_author', {'id': author.id }) }}"#}
+                                                                       {#class="button btn-borderd btn-small btn-alt">{{ 'front.main.unfollow'|trans }}</a>#}
+                                                                {#{% endif %}#}
+
+                                                                {#{% endif %}#}
+
+                                                                <a class="button btn-borderd-hover btn-small btn-main bg-color-light"
+                                                                   href="{{ path('front_main_author_details', {'id': author.id}) }}">{{ 'front.main.profile'|trans }}</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            <div class="text-center mt-4 mb-4">
+                                {{ knp_pagination_render(authors) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% include 'FrontBundle:Main/include:footer.html.twig' %}
+            </section>
+        </div>
+    </div>
+    <!-- End of main-wrapper -->
+    <span class="menu-trigger menu-trigger-overlay"></span>
+    <a class="scrollup"><i class="ti-arrow-up"></i></a>
+    {% include 'FrontBundle:Main/include:login_modal.html.twig' %}
+{% endblock %}

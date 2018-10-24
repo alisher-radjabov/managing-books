@@ -1,0 +1,1687 @@
+{% extends ':front:base.html.twig' %}
+
+{% block content %}
+    <body id="body">
+    <!-- class="start-menuHide side-menu-hidden" -->
+    <div class="main-wrapper" id="main-wrapper">
+        {% include 'FrontBundle:Main/include:header.html.twig' %}
+        <div class="main-content">
+            <aside id="side-navigation">
+                <div class="side-navigation-inner">
+                    <h4 class="h5 strong6 main-color p-3 sideMenuHead">
+                        <a href="#" class="styled-icon styled-icon--xs styled-icon--round menu-trigger main-color "> <i class="ti-close"></i> </a>
+                        <a href="#" class="main-logo d-inline-block align-top"> <img src="../assets/img/logo.jpg" alt=""></a>
+                    </h4>
+                    <div class="side-nav">
+                        {% include 'FrontBundle:Main/include:side_menu.html.twig' %}
+                        {% include 'FrontBundle:Main/include:side_nav_tabs.html.twig' %}
+                    </div>
+                </div>
+            </aside>
+            <section id="main-sec">
+                <div id="mainView" class="mainView-normal">
+                    <div class="main-sec-header">
+                        <div class="main-page-header-top p-4">
+                            <div class="page-header-top-title">
+                                <h1 class="h2 mb-0">
+                                <span class="styled-icon styled-icon-imgCenter styled-icon--sm styled-icon--dark" style="background-color:#a5cd7c">
+                                    <img src="../uploads/icons/quran.svg">
+                                </span>
+                                    <span class="page-header-top-text"> Quran Kareem</span>
+                                </h1>
+                            </div>
+                            <div class="page-header-top-side mr-auto">
+                                <ul class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Books</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">You are Here</li>
+
+                                    <li class="rss-item">
+                                        <a href="#" class="styled-icon ripple styled-icon--xs styled-icon--borderd bg-color-light">
+                                            <i class="ti-rss-alt"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <div class="main-page-header-bottom head-title no-padding">
+
+                            <div class="sorting-head">
+                                <div class="sorting-head-inner">
+                                    <div class="form-control-icon">
+                                        <span class="input-icon"><i class="ti-filter"></i></span>
+                                        <select class="select-filter-nosearch form-control input-lg">
+                                            <option value="all" selected>View All Books</option>
+                                            <option value="1">Only Free Books</option>
+                                            <option value="2">Only Paid Books</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-control-icon">
+                                        <span class="input-icon"><i class="ti-arrows-vertical"></i></span>
+                                        <select class="select-filter-nosearch form-control input-lg">
+                                            <option value="0" selected>Sort By Date</option>
+                                            <option value="1">Sort By Top Views</option>
+                                            <option value="2">Sort By Top Rating</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <ul class="mainView-toggles">
+                                <li><a class="mainView-normal-trig"><i class="ti-view-grid"></i></a></li>
+                                <li><a class="mainView-list-trig"><i class="ti-view-list"></i></a></li>
+                                <li><a class="mainView-compact-trig"><i class="ti-align-justify"></i></a></li>
+                            </ul>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="main-sec-inner mainView-content p-4">
+                        <div class="page-cards">
+                            <ul class="row tight-row">
+
+                                <li class="col-lg-4 col-md-6 col-sm-12 mainView-item">
+                                    <div class="card mainView-card mb-3">
+                                        <div class="card-body">
+                                            <div class="thumbnail-item side-thumbnail-item">
+                                                <div class="thumb-head">
+                                                    <div class="thumb-head-inner">
+                                                        <div class="book-thumb book-thumb-sm book-withParts">
+                                                            <div class="book-parts-patch">
+                                                                <span>5 parts</span>
+                                                            </div>
+
+                                                            <a class="book-cover" href="#">
+                                                                <img src="../uploads/books/20170611195214.jpg" alt="book-descriptions">
+                                                                <span class="book-cover-mark"></span>
+                                                            </a>
+
+                                                            <div class="book-info dropdown">
+                                                                <a href="#" class="styled-icon styled-icon--xxs styled-icon--round styled-icon--borderd bg-color-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-info"></i></a>
+                                                                <div class="dropdown-menu dropdown-menu-right bg-color-light">
+                                                                    <ul class="p-4 icons-list">
+                                                                        <li><i class="ti-user"></i> Author: <a href="#" class="color2 strong6">Abdul Shakoor Farooqui of lucknow</a> </li>
+                                                                        <li> <i class="ti-world"></i> Translate: <a href="#" class="color2 strong6">Salim al-Hassani</a> </li>
+                                                                        <li> <i class="ti-calendar"></i> Date Relese: <strong class="strong6">17 Shawal 1437 Hijri </strong> </li>
+                                                                        <li> <i class="ti-light-bulb"></i> Last Update: <strong class="strong6">18 Muharam 1437 Hijri </strong> </li>
+                                                                        <li> <i class="ti-list"></i> Diwy : <strong class="strong6"> 297/46/2005</strong> </li>
+                                                                        <li> <i class="ti-files"></i> Pages: <strong class="strong6"> 345</strong> </li>
+                                                                        <li> <i class="ti-eye"></i> Views : <strong class="strong6"> 6481</strong> </li>
+                                                                        <li> <i class="ti-download"></i> Downloads : <strong class="strong6"> 6481</strong> </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="thumb-body">
+                                                    <div class="thumb-body-inner mt-1">
+                                                        <a href="#" class="thumb-body-title"><h3 class="h4">Answering the Baseless Shīʿī Allegations Against</h3></a>
+                                                        <a href="#" class="main-color thumb-body-alt mt-1"><i class="ti-user"></i>Author Name Here</a>
+
+                                                        <div class="thumb-body-controls">
+                                                            <div class="dropdown inline-block">
+                                                                <a class="button btn-solid btn-small btn-orange dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  View Parts<i class="ti-angle-down"></i></a>
+                                                                <div class="dropdown-menu ">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <div class="dropdown-item-block">
+                                                                                <a href="#" class="thumbnail-item side-thumbnail-item">
+                                                                                    <div class="thumb-head">
+                                                                                        <div class="thumb-head-inner">
+                                                                                            <div class="book-thumb" style="width: 50px">
+                                                                                                <div class="book-cover">
+                                                                                                    <img src="../uploads/book-1.jpg" alt="book-descriptions">
+                                                                                                    <span class="book-cover-mark"></span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="thumb-body">
+                                                                                        <div class="thumb-body-inner">
+                                                                                            <div class="text_orange mt-2">Part one</div>
+                                                                                            <h5>Doctrines of the Twelver Shiite (Enquiry and Response)</h5>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </li>
+
+                                                                        <li>
+                                                                            <div class="dropdown-item-block">
+                                                                                <a href="#" class="thumbnail-item side-thumbnail-item">
+                                                                                    <div class="thumb-head">
+                                                                                        <div class="thumb-head-inner">
+                                                                                            <div class="book-thumb" style="width: 50px">
+                                                                                                <div class="book-cover">
+                                                                                                    <img src="../uploads/book-1.jpg" alt="book-descriptions">
+                                                                                                    <span class="book-cover-mark"></span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="thumb-body">
+                                                                                        <div class="thumb-body-inner">
+                                                                                            <div class="text_orange mt-2">Part one</div>
+                                                                                            <h5>Doctrines of the Twelver Shiite (Enquiry and Response)</h5>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </li>
+
+                                                                        <li>
+                                                                            <div class="dropdown-item-block">
+                                                                                <a href="#" class="thumbnail-item side-thumbnail-item">
+                                                                                    <div class="thumb-head">
+                                                                                        <div class="thumb-head-inner">
+                                                                                            <div class="book-thumb" style="width: 50px">
+                                                                                                <div class="book-cover">
+                                                                                                    <img src="../uploads/book-1.jpg" alt="book-descriptions">
+                                                                                                    <span class="book-cover-mark"></span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="thumb-body">
+                                                                                        <div class="thumb-body-inner">
+                                                                                            <div class="text_orange mt-2">Part one</div>
+                                                                                            <h5>Doctrines of the Twelver Shiite (Enquiry and Response)</h5>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </li>
+
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="thumb-over-corner-tr">
+                                                                <a class="fav-ico true styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-lg-4 col-md-6 col-sm-12 mainView-item">
+                                    <div class="card mainView-card mb-3">
+                                        <div class="card-body">
+                                            <div class="thumbnail-item side-thumbnail-item">
+                                                <div class="thumb-head">
+                                                    <div class="thumb-head-inner">
+                                                        <div class="book-thumb book-thumb-sm">
+                                                            <a class="book-cover" href="#">
+                                                                <img src="../uploads/books/20170611195214.jpg" alt="book-descriptions">
+                                                                <span class="book-cover-mark"></span>
+                                                            </a>
+                                                            <div class="book-info dropdown">
+                                                                <a href="#" class="styled-icon styled-icon--xxs styled-icon--round styled-icon--borderd bg-color-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-info"></i></a>
+                                                                <div class="dropdown-menu dropdown-menu-right bg-color-light">
+                                                                    <ul class="p-4 icons-list">
+                                                                        <li><i class="ti-user"></i> المؤلف: <a href="#" class="color2 strong6"> عبد الكريم بن خالد الحربي</a> </li>
+                                                                        <li> <i class="ti-calendar"></i> تاريخ الإضافة: <strong class="strong6">22 شوال 1437هـ </strong> </li>
+                                                                        <li> <i class="ti-light-bulb"></i> آخر تحديث في: <strong class="strong6">18 شوال 1438هـ </strong> </li>
+                                                                        <li> <i class="ti-list"></i> Diwy : <strong class="strong6"> 297/46/2005</strong> </li>
+                                                                        <li> <i class="ti-files"></i> عدد الصفحات : <strong class="strong6"> 122</strong> </li>
+                                                                        <li> <i class="ti-eye"></i> Views : <strong class="strong6"> 6481</strong> </li>
+                                                                        <li> <i class="ti-download"></i> مرات التحميل : <strong class="strong6"> 98743</strong> </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="thumb-body">
+                                                    <div class="thumb-body-inner mt-1">
+                                                        <a href="#" class="thumb-body-title"><h3 class="h4">Ma'alimu Deen</h3></a>
+                                                        <a href="#" class="main-color thumb-body-alt mt-1"><i class="ti-user"></i>Author Name Here</a>
+
+                                                        <div class="thumb-body-controls">
+                                                            <a href="#" class="button btn-solid btn-small btn-alt"><i class="ti-book"></i>  Read</a>
+                                                            <a class="button btn-borderd-hover btn-small btn-main bg-color-light" href="#" role="button"><i class="ti-download"></i> Download</a>
+
+                                                            <div class="thumb-over-corner-tr">
+                                                                <a class="fav-ico  styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-lg-4 col-md-6 col-sm-12 mainView-item">
+                                    <div class="card mainView-card mb-3">
+                                        <div class="card-body">
+                                            <div class="thumbnail-item side-thumbnail-item">
+                                                <div class="thumb-head">
+                                                    <div class="thumb-head-inner">
+                                                        <div class="book-thumb book-thumb-sm">
+
+                                                            <a class="book-cover" href="#">
+                                                                <img src="../uploads/books/20170612120740.jpg" alt="book-descriptions">
+                                                                <span class="book-cover-mark"></span>
+                                                            </a>
+                                                            <div class="book-info dropdown">
+                                                                <a href="#" class="styled-icon styled-icon--xxs styled-icon--round styled-icon--borderd bg-color-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-info"></i></a>
+                                                                <div class="dropdown-menu dropdown-menu-right bg-color-light">
+                                                                    <ul class="p-4 icons-list">
+                                                                        <li><i class="ti-user"></i> المؤلف: <a href="#" class="color2 strong6"> عبد الكريم بن خالد الحربي</a> </li>
+                                                                        <li> <i class="ti-calendar"></i> تاريخ الإضافة: <strong class="strong6">22 شوال 1437هـ </strong> </li>
+                                                                        <li> <i class="ti-light-bulb"></i> آخر تحديث في: <strong class="strong6">18 شوال 1438هـ </strong> </li>
+                                                                        <li> <i class="ti-list"></i> Diwy : <strong class="strong6"> 297/46/2005</strong> </li>
+                                                                        <li> <i class="ti-files"></i> عدد الصفحات : <strong class="strong6"> 122</strong> </li>
+                                                                        <li> <i class="ti-eye"></i> Views : <strong class="strong6"> 6481</strong> </li>
+                                                                        <li> <i class="ti-download"></i> مرات التحميل : <strong class="strong6"> 98743</strong> </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="thumb-body">
+                                                    <div class="thumb-body-inner mt-1">
+                                                        <a href="#" class="thumb-body-title"><h3 class="h4">Doctrines of the Twelver Shiite (Enquiry and Response)</h3></a>
+                                                        <a href="#" class="main-color thumb-body-alt mt-1"><i class="ti-user"></i>Author Name Here</a>
+
+                                                        <div class="thumb-body-controls">
+                                                            <a href="#" class="button btn-solid btn-small btn-alt"><i class="ti-book"></i>  Read</a>
+                                                            <a class="button btn-borderd-hover btn-small btn-main bg-color-light" href="#" role="button"><i class="ti-download"></i> Download</a>
+
+                                                            <div class="thumb-over-corner-tr">
+                                                                <a class="fav-ico true styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-lg-4 col-md-6 col-sm-12 mainView-item">
+                                    <div class="card mainView-card mb-3">
+                                        <div class="card-body">
+                                            <div class="thumbnail-item side-thumbnail-item">
+                                                <div class="thumb-head">
+                                                    <div class="thumb-head-inner">
+                                                        <div class="book-thumb book-thumb-sm">
+                                                            <a class="book-cover" href="#">
+                                                                <img src="../uploads/books/20170612115040.jpg" alt="book-descriptions">
+                                                                <span class="book-cover-mark"></span>
+                                                            </a>
+                                                            <div class="book-info dropdown">
+                                                                <a href="#" class="styled-icon styled-icon--xxs styled-icon--round styled-icon--borderd bg-color-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-info"></i></a>
+                                                                <div class="dropdown-menu dropdown-menu-right bg-color-light">
+                                                                    <ul class="p-4 icons-list">
+                                                                        <li><i class="ti-user"></i> المؤلف: <a href="#" class="color2 strong6"> عبد الكريم بن خالد الحربي</a> </li>
+                                                                        <li> <i class="ti-calendar"></i> تاريخ الإضافة: <strong class="strong6">22 شوال 1437هـ </strong> </li>
+                                                                        <li> <i class="ti-light-bulb"></i> آخر تحديث في: <strong class="strong6">18 شوال 1438هـ </strong> </li>
+                                                                        <li> <i class="ti-list"></i> Diwy : <strong class="strong6"> 297/46/2005</strong> </li>
+                                                                        <li> <i class="ti-files"></i> عدد الصفحات : <strong class="strong6"> 122</strong> </li>
+                                                                        <li> <i class="ti-eye"></i> Views : <strong class="strong6"> 6481</strong> </li>
+                                                                        <li> <i class="ti-download"></i> مرات التحميل : <strong class="strong6"> 98743</strong> </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="thumb-body">
+                                                    <div class="thumb-body-inner mt-1">
+                                                        <a href="#" class="thumb-body-title"><h3 class="h4">Doctrines of the Twelver Shiite (Enquiry and Response)</h3></a>
+                                                        <a href="#" class="main-color thumb-body-alt mt-1"><i class="ti-user"></i>Author Name Here</a>
+
+                                                        <div class="thumb-body-controls">
+                                                            <a href="#" class="button btn-solid btn-small btn-alt"><i class="ti-book"></i>  Read</a>
+                                                            <a class="button btn-borderd-hover btn-small btn-main bg-color-light" href="#" role="button"><i class="ti-download"></i> Download</a>
+
+                                                            <div class="thumb-over-corner-tr">
+                                                                <a class="fav-ico styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-lg-4 col-md-6 col-sm-12 mainView-item">
+                                    <div class="card mainView-card mb-3">
+                                        <div class="card-body">
+                                            <div class="thumbnail-item side-thumbnail-item">
+                                                <div class="thumb-head">
+                                                    <div class="thumb-head-inner">
+                                                        <div class="book-thumb book-thumb-sm">
+                                                            <a class="book-cover" href="#">
+                                                                <img src="../uploads/books/20170611193829.jpg" alt="book-descriptions">
+                                                                <span class="book-cover-mark"></span>
+                                                            </a>
+                                                            <div class="book-info dropdown">
+                                                                <a href="#" class="styled-icon styled-icon--xxs styled-icon--round styled-icon--borderd bg-color-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-info"></i></a>
+                                                                <div class="dropdown-menu dropdown-menu-right bg-color-light">
+                                                                    <ul class="p-4 icons-list">
+                                                                        <li><i class="ti-user"></i> Author: <a href="#" class="color2 strong6">Abdul Shakoor Farooqui of lucknow</a> </li>
+                                                                        <li> <i class="ti-world"></i> Translate: <a href="#" class="color2 strong6">Salim al-Hassani</a> </li>
+                                                                        <li> <i class="ti-calendar"></i> Date Relese: <strong class="strong6">17 Shawal 1437 Hijri </strong> </li>
+                                                                        <li> <i class="ti-light-bulb"></i> Last Update: <strong class="strong6">18 Muharam 1437 Hijri </strong> </li>
+                                                                        <li> <i class="ti-list"></i> Diwy : <strong class="strong6"> 297/46/2005</strong> </li>
+                                                                        <li> <i class="ti-files"></i> Pages: <strong class="strong6"> 345</strong> </li>
+                                                                        <li> <i class="ti-eye"></i> Views : <strong class="strong6"> 6481</strong> </li>
+                                                                        <li> <i class="ti-download"></i> Downloads : <strong class="strong6"> 6481</strong> </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="thumb-body">
+                                                    <div class="thumb-body-inner mt-1">
+                                                        <a href="#" class="thumb-body-title"><h3 class="h4">Virtues and Outstanding Traits of Sayyidunā ʿUmar ibn al-Khaṭṭāb al- Fārūq</h3></a>
+                                                        <a href="#" class="main-color thumb-body-alt mt-1"><i class="ti-user"></i>Author Name Here</a>
+
+                                                        <div class="thumb-body-controls">
+                                                            <a href="#" class="button btn-solid btn-small btn-alt"><i class="ti-book"></i>  Read</a>
+                                                            <a class="button btn-borderd-hover btn-small btn-main bg-color-light" href="#" role="button"><i class="ti-download"></i> Download</a>
+
+                                                            <div class="thumb-over-corner-tr">
+                                                                <a class="fav-ico styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-lg-4 col-md-6 col-sm-12 mainView-item">
+                                    <div class="card mainView-card mb-3">
+                                        <div class="card-body">
+                                            <div class="thumbnail-item side-thumbnail-item">
+                                                <div class="thumb-head">
+                                                    <div class="thumb-head-inner">
+                                                        <div class="book-thumb book-thumb-sm">
+
+                                                            <a class="book-cover" href="#">
+                                                                <img src="../uploads/books/20170612112345.jpg" alt="book-descriptions">
+                                                                <span class="book-cover-mark"></span>
+                                                            </a>
+                                                            <div class="book-info dropdown">
+                                                                <a href="#" class="styled-icon styled-icon--xxs styled-icon--round styled-icon--borderd bg-color-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-info"></i></a>
+                                                                <div class="dropdown-menu dropdown-menu-right bg-color-light">
+                                                                    <ul class="p-4 icons-list">
+                                                                        <li><i class="ti-user"></i> Author: <a href="#" class="color2 strong6">Abdul Shakoor Farooqui of lucknow</a> </li>
+                                                                        <li> <i class="ti-world"></i> Translate: <a href="#" class="color2 strong6">Salim al-Hassani</a> </li>
+                                                                        <li> <i class="ti-calendar"></i> Date Relese: <strong class="strong6">17 Shawal 1437 Hijri </strong> </li>
+                                                                        <li> <i class="ti-light-bulb"></i> Last Update: <strong class="strong6">18 Muharam 1437 Hijri </strong> </li>
+                                                                        <li> <i class="ti-list"></i> Diwy : <strong class="strong6"> 297/46/2005</strong> </li>
+                                                                        <li> <i class="ti-files"></i> Pages: <strong class="strong6"> 345</strong> </li>
+                                                                        <li> <i class="ti-eye"></i> Views : <strong class="strong6"> 6481</strong> </li>
+                                                                        <li> <i class="ti-download"></i> Downloads : <strong class="strong6"> 6481</strong> </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="thumb-body">
+                                                    <div class="thumb-body-inner mt-1">
+                                                        <a href="#" class="thumb-body-title"><h3 class="h4">Virtues and Outstanding Traits of Sayyidunā</h3></a>
+                                                        <a href="#" class="main-color thumb-body-alt mt-1"><i class="ti-user"></i>Author Name Here</a>
+
+                                                        <div class="thumb-body-controls">
+                                                            <a href="#" class="button btn-solid btn-small btn-alt"><i class="ti-book"></i>  Read</a>
+                                                            <a class="button btn-borderd-hover btn-small btn-main bg-color-light" href="#" role="button"><i class="ti-download"></i> Download</a>
+
+                                                            <div class="thumb-over-corner-tr">
+                                                                <a class="fav-ico styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="col-lg-12 mb-3">
+                                    <div class="card">
+                                        <h1 class="strong text-center color2" style="line-height: 150px">إعلان هنا</h1>
+                                    </div>
+                                </li>
+
+                                <li class="col-lg-4 col-md-6 col-sm-12 mainView-item">
+                                    <div class="card mainView-card mb-3">
+                                        <div class="card-body">
+                                            <div class="thumbnail-item side-thumbnail-item">
+                                                <div class="thumb-head">
+                                                    <div class="thumb-head-inner">
+                                                        <div class="book-thumb book-thumb-sm book-withParts">
+                                                            <div class="book-parts-patch">
+                                                                <span>5 parts</span>
+                                                            </div>
+
+                                                            <a class="book-cover" href="#">
+                                                                <img src="../uploads/books/20170611195214.jpg" alt="book-descriptions">
+                                                                <span class="book-cover-mark"></span>
+                                                            </a>
+
+                                                            <div class="book-info dropdown">
+                                                                <a href="#" class="styled-icon styled-icon--xxs styled-icon--round styled-icon--borderd bg-color-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-info"></i></a>
+                                                                <div class="dropdown-menu dropdown-menu-right bg-color-light">
+                                                                    <ul class="p-4 icons-list">
+                                                                        <li><i class="ti-user"></i> Author: <a href="#" class="color2 strong6">Abdul Shakoor Farooqui of lucknow</a> </li>
+                                                                        <li> <i class="ti-world"></i> Translate: <a href="#" class="color2 strong6">Salim al-Hassani</a> </li>
+                                                                        <li> <i class="ti-calendar"></i> Date Relese: <strong class="strong6">17 Shawal 1437 Hijri </strong> </li>
+                                                                        <li> <i class="ti-light-bulb"></i> Last Update: <strong class="strong6">18 Muharam 1437 Hijri </strong> </li>
+                                                                        <li> <i class="ti-list"></i> Diwy : <strong class="strong6"> 297/46/2005</strong> </li>
+                                                                        <li> <i class="ti-files"></i> Pages: <strong class="strong6"> 345</strong> </li>
+                                                                        <li> <i class="ti-eye"></i> Views : <strong class="strong6"> 6481</strong> </li>
+                                                                        <li> <i class="ti-download"></i> Downloads : <strong class="strong6"> 6481</strong> </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="thumb-body">
+                                                    <div class="thumb-body-inner mt-1">
+                                                        <a href="#" class="thumb-body-title"><h3 class="h4">Answering the Baseless Shīʿī Allegations Against</h3></a>
+                                                        <a href="#" class="main-color thumb-body-alt mt-1"><i class="ti-user"></i>Author Name Here</a>
+
+                                                        <div class="thumb-body-controls">
+                                                            <div class="dropdown inline-block">
+                                                                <a class="button btn-solid btn-small btn-orange dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  View Parts<i class="ti-angle-down"></i></a>
+                                                                <div class="dropdown-menu ">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <div class="dropdown-item-block">
+                                                                                <a href="#" class="thumbnail-item side-thumbnail-item">
+                                                                                    <div class="thumb-head">
+                                                                                        <div class="thumb-head-inner">
+                                                                                            <div class="book-thumb" style="width: 50px">
+                                                                                                <div class="book-cover">
+                                                                                                    <img src="../uploads/book-1.jpg" alt="book-descriptions">
+                                                                                                    <span class="book-cover-mark"></span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="thumb-body">
+                                                                                        <div class="thumb-body-inner">
+                                                                                            <div class="text_orange mt-2">Part one</div>
+                                                                                            <h5>Doctrines of the Twelver Shiite (Enquiry and Response)</h5>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </li>
+
+                                                                        <li>
+                                                                            <div class="dropdown-item-block">
+                                                                                <a href="#" class="thumbnail-item side-thumbnail-item">
+                                                                                    <div class="thumb-head">
+                                                                                        <div class="thumb-head-inner">
+                                                                                            <div class="book-thumb" style="width: 50px">
+                                                                                                <div class="book-cover">
+                                                                                                    <img src="../uploads/book-1.jpg" alt="book-descriptions">
+                                                                                                    <span class="book-cover-mark"></span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="thumb-body">
+                                                                                        <div class="thumb-body-inner">
+                                                                                            <div class="text_orange mt-2">Part one</div>
+                                                                                            <h5>Doctrines of the Twelver Shiite (Enquiry and Response)</h5>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </li>
+
+                                                                        <li>
+                                                                            <div class="dropdown-item-block">
+                                                                                <a href="#" class="thumbnail-item side-thumbnail-item">
+                                                                                    <div class="thumb-head">
+                                                                                        <div class="thumb-head-inner">
+                                                                                            <div class="book-thumb" style="width: 50px">
+                                                                                                <div class="book-cover">
+                                                                                                    <img src="../uploads/book-1.jpg" alt="book-descriptions">
+                                                                                                    <span class="book-cover-mark"></span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="thumb-body">
+                                                                                        <div class="thumb-body-inner">
+                                                                                            <div class="text_orange mt-2">Part one</div>
+                                                                                            <h5>Doctrines of the Twelver Shiite (Enquiry and Response)</h5>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </li>
+
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="thumb-over-corner-tr">
+                                                                <a class="fav-ico true styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-lg-4 col-md-6 col-sm-12 mainView-item">
+                                    <div class="card mainView-card mb-3">
+                                        <div class="card-body">
+                                            <div class="thumbnail-item side-thumbnail-item">
+                                                <div class="thumb-head">
+                                                    <div class="thumb-head-inner">
+                                                        <div class="book-thumb book-thumb-sm">
+                                                            <a class="book-cover" href="#">
+                                                                <img src="../uploads/books/20170611195214.jpg" alt="book-descriptions">
+                                                                <span class="book-cover-mark"></span>
+                                                            </a>
+                                                            <div class="book-info dropdown">
+                                                                <a href="#" class="styled-icon styled-icon--xxs styled-icon--round styled-icon--borderd bg-color-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-info"></i></a>
+                                                                <div class="dropdown-menu dropdown-menu-right bg-color-light">
+                                                                    <ul class="p-4 icons-list">
+                                                                        <li><i class="ti-user"></i> المؤلف: <a href="#" class="color2 strong6"> عبد الكريم بن خالد الحربي</a> </li>
+                                                                        <li> <i class="ti-calendar"></i> تاريخ الإضافة: <strong class="strong6">22 شوال 1437هـ </strong> </li>
+                                                                        <li> <i class="ti-light-bulb"></i> آخر تحديث في: <strong class="strong6">18 شوال 1438هـ </strong> </li>
+                                                                        <li> <i class="ti-list"></i> Diwy : <strong class="strong6"> 297/46/2005</strong> </li>
+                                                                        <li> <i class="ti-files"></i> عدد الصفحات : <strong class="strong6"> 122</strong> </li>
+                                                                        <li> <i class="ti-eye"></i> Views : <strong class="strong6"> 6481</strong> </li>
+                                                                        <li> <i class="ti-download"></i> مرات التحميل : <strong class="strong6"> 98743</strong> </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="thumb-body">
+                                                    <div class="thumb-body-inner mt-1">
+                                                        <a href="#" class="thumb-body-title"><h3 class="h4">Ma'alimu Deen</h3></a>
+                                                        <a href="#" class="main-color thumb-body-alt mt-1"><i class="ti-user"></i>Author Name Here</a>
+
+                                                        <div class="thumb-body-controls">
+                                                            <a href="#" class="button btn-solid btn-small btn-alt"><i class="ti-book"></i>  Read</a>
+                                                            <a class="button btn-borderd-hover btn-small btn-main bg-color-light" href="#" role="button"><i class="ti-download"></i> Download</a>
+
+                                                            <div class="thumb-over-corner-tr">
+                                                                <a class="fav-ico  styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-lg-4 col-md-6 col-sm-12 mainView-item">
+                                    <div class="card mainView-card mb-3">
+                                        <div class="card-body">
+                                            <div class="thumbnail-item side-thumbnail-item">
+                                                <div class="thumb-head">
+                                                    <div class="thumb-head-inner">
+                                                        <div class="book-thumb book-thumb-sm">
+
+                                                            <a class="book-cover" href="#">
+                                                                <img src="../uploads/books/20170612120740.jpg" alt="book-descriptions">
+                                                                <span class="book-cover-mark"></span>
+                                                            </a>
+                                                            <div class="book-info dropdown">
+                                                                <a href="#" class="styled-icon styled-icon--xxs styled-icon--round styled-icon--borderd bg-color-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-info"></i></a>
+                                                                <div class="dropdown-menu dropdown-menu-right bg-color-light">
+                                                                    <ul class="p-4 icons-list">
+                                                                        <li><i class="ti-user"></i> المؤلف: <a href="#" class="color2 strong6"> عبد الكريم بن خالد الحربي</a> </li>
+                                                                        <li> <i class="ti-calendar"></i> تاريخ الإضافة: <strong class="strong6">22 شوال 1437هـ </strong> </li>
+                                                                        <li> <i class="ti-light-bulb"></i> آخر تحديث في: <strong class="strong6">18 شوال 1438هـ </strong> </li>
+                                                                        <li> <i class="ti-list"></i> Diwy : <strong class="strong6"> 297/46/2005</strong> </li>
+                                                                        <li> <i class="ti-files"></i> عدد الصفحات : <strong class="strong6"> 122</strong> </li>
+                                                                        <li> <i class="ti-eye"></i> Views : <strong class="strong6"> 6481</strong> </li>
+                                                                        <li> <i class="ti-download"></i> مرات التحميل : <strong class="strong6"> 98743</strong> </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="thumb-body">
+                                                    <div class="thumb-body-inner mt-1">
+                                                        <a href="#" class="thumb-body-title"><h3 class="h4">Doctrines of the Twelver Shiite (Enquiry and Response)</h3></a>
+                                                        <a href="#" class="main-color thumb-body-alt mt-1"><i class="ti-user"></i>Author Name Here</a>
+
+                                                        <div class="thumb-body-controls">
+                                                            <a href="#" class="button btn-solid btn-small btn-alt"><i class="ti-book"></i>  Read</a>
+                                                            <a class="button btn-borderd-hover btn-small btn-main bg-color-light" href="#" role="button"><i class="ti-download"></i> Download</a>
+
+                                                            <div class="thumb-over-corner-tr">
+                                                                <a class="fav-ico true styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-lg-4 col-md-6 col-sm-12 mainView-item">
+                                    <div class="card mainView-card mb-3">
+                                        <div class="card-body">
+                                            <div class="thumbnail-item side-thumbnail-item">
+                                                <div class="thumb-head">
+                                                    <div class="thumb-head-inner">
+                                                        <div class="book-thumb book-thumb-sm">
+                                                            <a class="book-cover" href="#">
+                                                                <img src="../uploads/books/20170612115040.jpg" alt="book-descriptions">
+                                                                <span class="book-cover-mark"></span>
+                                                            </a>
+                                                            <div class="book-info dropdown">
+                                                                <a href="#" class="styled-icon styled-icon--xxs styled-icon--round styled-icon--borderd bg-color-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-info"></i></a>
+                                                                <div class="dropdown-menu dropdown-menu-right bg-color-light">
+                                                                    <ul class="p-4 icons-list">
+                                                                        <li><i class="ti-user"></i> المؤلف: <a href="#" class="color2 strong6"> عبد الكريم بن خالد الحربي</a> </li>
+                                                                        <li> <i class="ti-calendar"></i> تاريخ الإضافة: <strong class="strong6">22 شوال 1437هـ </strong> </li>
+                                                                        <li> <i class="ti-light-bulb"></i> آخر تحديث في: <strong class="strong6">18 شوال 1438هـ </strong> </li>
+                                                                        <li> <i class="ti-list"></i> Diwy : <strong class="strong6"> 297/46/2005</strong> </li>
+                                                                        <li> <i class="ti-files"></i> عدد الصفحات : <strong class="strong6"> 122</strong> </li>
+                                                                        <li> <i class="ti-eye"></i> Views : <strong class="strong6"> 6481</strong> </li>
+                                                                        <li> <i class="ti-download"></i> مرات التحميل : <strong class="strong6"> 98743</strong> </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="thumb-body">
+                                                    <div class="thumb-body-inner mt-1">
+                                                        <a href="#" class="thumb-body-title"><h3 class="h4">Doctrines of the Twelver Shiite (Enquiry and Response)</h3></a>
+                                                        <a href="#" class="main-color thumb-body-alt mt-1"><i class="ti-user"></i>Author Name Here</a>
+
+                                                        <div class="thumb-body-controls">
+                                                            <a href="#" class="button btn-solid btn-small btn-alt"><i class="ti-book"></i>  Read</a>
+                                                            <a class="button btn-borderd-hover btn-small btn-main bg-color-light" href="#" role="button"><i class="ti-download"></i> Download</a>
+
+                                                            <div class="thumb-over-corner-tr">
+                                                                <a class="fav-ico styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-lg-4 col-md-6 col-sm-12 mainView-item">
+                                    <div class="card mainView-card mb-3">
+                                        <div class="card-body">
+                                            <div class="thumbnail-item side-thumbnail-item">
+                                                <div class="thumb-head">
+                                                    <div class="thumb-head-inner">
+                                                        <div class="book-thumb book-thumb-sm">
+                                                            <a class="book-cover" href="#">
+                                                                <img src="../uploads/books/20170611193829.jpg" alt="book-descriptions">
+                                                                <span class="book-cover-mark"></span>
+                                                            </a>
+                                                            <div class="book-info dropdown">
+                                                                <a href="#" class="styled-icon styled-icon--xxs styled-icon--round styled-icon--borderd bg-color-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-info"></i></a>
+                                                                <div class="dropdown-menu dropdown-menu-right bg-color-light">
+                                                                    <ul class="p-4 icons-list">
+                                                                        <li><i class="ti-user"></i> Author: <a href="#" class="color2 strong6">Abdul Shakoor Farooqui of lucknow</a> </li>
+                                                                        <li> <i class="ti-world"></i> Translate: <a href="#" class="color2 strong6">Salim al-Hassani</a> </li>
+                                                                        <li> <i class="ti-calendar"></i> Date Relese: <strong class="strong6">17 Shawal 1437 Hijri </strong> </li>
+                                                                        <li> <i class="ti-light-bulb"></i> Last Update: <strong class="strong6">18 Muharam 1437 Hijri </strong> </li>
+                                                                        <li> <i class="ti-list"></i> Diwy : <strong class="strong6"> 297/46/2005</strong> </li>
+                                                                        <li> <i class="ti-files"></i> Pages: <strong class="strong6"> 345</strong> </li>
+                                                                        <li> <i class="ti-eye"></i> Views : <strong class="strong6"> 6481</strong> </li>
+                                                                        <li> <i class="ti-download"></i> Downloads : <strong class="strong6"> 6481</strong> </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="thumb-body">
+                                                    <div class="thumb-body-inner mt-1">
+                                                        <a href="#" class="thumb-body-title"><h3 class="h4">Virtues and Outstanding Traits of Sayyidunā ʿUmar ibn al-Khaṭṭāb al- Fārūq</h3></a>
+                                                        <a href="#" class="main-color thumb-body-alt mt-1"><i class="ti-user"></i>Author Name Here</a>
+
+                                                        <div class="thumb-body-controls">
+                                                            <a href="#" class="button btn-solid btn-small btn-alt"><i class="ti-book"></i>  Read</a>
+                                                            <a class="button btn-borderd-hover btn-small btn-main bg-color-light" href="#" role="button"><i class="ti-download"></i> Download</a>
+
+                                                            <div class="thumb-over-corner-tr">
+                                                                <a class="fav-ico styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-lg-4 col-md-6 col-sm-12 mainView-item">
+                                    <div class="card mainView-card mb-3">
+                                        <div class="card-body">
+                                            <div class="thumbnail-item side-thumbnail-item">
+                                                <div class="thumb-head">
+                                                    <div class="thumb-head-inner">
+                                                        <div class="book-thumb book-thumb-sm">
+
+                                                            <a class="book-cover" href="#">
+                                                                <img src="../uploads/books/20170612112345.jpg" alt="book-descriptions">
+                                                                <span class="book-cover-mark"></span>
+                                                            </a>
+                                                            <div class="book-info dropdown">
+                                                                <a href="#" class="styled-icon styled-icon--xxs styled-icon--round styled-icon--borderd bg-color-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-info"></i></a>
+                                                                <div class="dropdown-menu dropdown-menu-right bg-color-light">
+                                                                    <ul class="p-4 icons-list">
+                                                                        <li><i class="ti-user"></i> Author: <a href="#" class="color2 strong6">Abdul Shakoor Farooqui of lucknow</a> </li>
+                                                                        <li> <i class="ti-world"></i> Translate: <a href="#" class="color2 strong6">Salim al-Hassani</a> </li>
+                                                                        <li> <i class="ti-calendar"></i> Date Relese: <strong class="strong6">17 Shawal 1437 Hijri </strong> </li>
+                                                                        <li> <i class="ti-light-bulb"></i> Last Update: <strong class="strong6">18 Muharam 1437 Hijri </strong> </li>
+                                                                        <li> <i class="ti-list"></i> Diwy : <strong class="strong6"> 297/46/2005</strong> </li>
+                                                                        <li> <i class="ti-files"></i> Pages: <strong class="strong6"> 345</strong> </li>
+                                                                        <li> <i class="ti-eye"></i> Views : <strong class="strong6"> 6481</strong> </li>
+                                                                        <li> <i class="ti-download"></i> Downloads : <strong class="strong6"> 6481</strong> </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="thumb-body">
+                                                    <div class="thumb-body-inner mt-1">
+                                                        <a href="#" class="thumb-body-title"><h3 class="h4">Virtues and Outstanding Traits of Sayyidunā</h3></a>
+                                                        <a href="#" class="main-color thumb-body-alt mt-1"><i class="ti-user"></i>Author Name Here</a>
+
+                                                        <div class="thumb-body-controls">
+                                                            <a href="#" class="button btn-solid btn-small btn-alt"><i class="ti-book"></i>  Read</a>
+                                                            <a class="button btn-borderd-hover btn-small btn-main bg-color-light" href="#" role="button"><i class="ti-download"></i> Download</a>
+
+                                                            <div class="thumb-over-corner-tr">
+                                                                <a class="fav-ico styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="col-lg-4 col-md-6 col-sm-12 mainView-item">
+                                    <div class="card mainView-card mb-3">
+                                        <div class="card-body">
+                                            <div class="thumbnail-item side-thumbnail-item">
+                                                <div class="thumb-head">
+                                                    <div class="thumb-head-inner">
+                                                        <div class="book-thumb book-thumb-sm book-withParts">
+                                                            <div class="book-parts-patch">
+                                                                <span>5 parts</span>
+                                                            </div>
+
+                                                            <a class="book-cover" href="#">
+                                                                <img src="../uploads/books/20170611195214.jpg" alt="book-descriptions">
+                                                                <span class="book-cover-mark"></span>
+                                                            </a>
+
+                                                            <div class="book-info dropdown">
+                                                                <a href="#" class="styled-icon styled-icon--xxs styled-icon--round styled-icon--borderd bg-color-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-info"></i></a>
+                                                                <div class="dropdown-menu dropdown-menu-right bg-color-light">
+                                                                    <ul class="p-4 icons-list">
+                                                                        <li><i class="ti-user"></i> Author: <a href="#" class="color2 strong6">Abdul Shakoor Farooqui of lucknow</a> </li>
+                                                                        <li> <i class="ti-world"></i> Translate: <a href="#" class="color2 strong6">Salim al-Hassani</a> </li>
+                                                                        <li> <i class="ti-calendar"></i> Date Relese: <strong class="strong6">17 Shawal 1437 Hijri </strong> </li>
+                                                                        <li> <i class="ti-light-bulb"></i> Last Update: <strong class="strong6">18 Muharam 1437 Hijri </strong> </li>
+                                                                        <li> <i class="ti-list"></i> Diwy : <strong class="strong6"> 297/46/2005</strong> </li>
+                                                                        <li> <i class="ti-files"></i> Pages: <strong class="strong6"> 345</strong> </li>
+                                                                        <li> <i class="ti-eye"></i> Views : <strong class="strong6"> 6481</strong> </li>
+                                                                        <li> <i class="ti-download"></i> Downloads : <strong class="strong6"> 6481</strong> </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="thumb-body">
+                                                    <div class="thumb-body-inner mt-1">
+                                                        <a href="#" class="thumb-body-title"><h3 class="h4">Answering the Baseless Shīʿī Allegations Against</h3></a>
+                                                        <a href="#" class="main-color thumb-body-alt mt-1"><i class="ti-user"></i>Author Name Here</a>
+
+                                                        <div class="thumb-body-controls">
+                                                            <div class="dropdown inline-block">
+                                                                <a class="button btn-solid btn-small btn-orange dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  View Parts<i class="ti-angle-down"></i></a>
+                                                                <div class="dropdown-menu ">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <div class="dropdown-item-block">
+                                                                                <a href="#" class="thumbnail-item side-thumbnail-item">
+                                                                                    <div class="thumb-head">
+                                                                                        <div class="thumb-head-inner">
+                                                                                            <div class="book-thumb" style="width: 50px">
+                                                                                                <div class="book-cover">
+                                                                                                    <img src="../uploads/book-1.jpg" alt="book-descriptions">
+                                                                                                    <span class="book-cover-mark"></span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="thumb-body">
+                                                                                        <div class="thumb-body-inner">
+                                                                                            <div class="text_orange mt-2">Part one</div>
+                                                                                            <h5>Doctrines of the Twelver Shiite (Enquiry and Response)</h5>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </li>
+
+                                                                        <li>
+                                                                            <div class="dropdown-item-block">
+                                                                                <a href="#" class="thumbnail-item side-thumbnail-item">
+                                                                                    <div class="thumb-head">
+                                                                                        <div class="thumb-head-inner">
+                                                                                            <div class="book-thumb" style="width: 50px">
+                                                                                                <div class="book-cover">
+                                                                                                    <img src="../uploads/book-1.jpg" alt="book-descriptions">
+                                                                                                    <span class="book-cover-mark"></span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="thumb-body">
+                                                                                        <div class="thumb-body-inner">
+                                                                                            <div class="text_orange mt-2">Part one</div>
+                                                                                            <h5>Doctrines of the Twelver Shiite (Enquiry and Response)</h5>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </li>
+
+                                                                        <li>
+                                                                            <div class="dropdown-item-block">
+                                                                                <a href="#" class="thumbnail-item side-thumbnail-item">
+                                                                                    <div class="thumb-head">
+                                                                                        <div class="thumb-head-inner">
+                                                                                            <div class="book-thumb" style="width: 50px">
+                                                                                                <div class="book-cover">
+                                                                                                    <img src="../uploads/book-1.jpg" alt="book-descriptions">
+                                                                                                    <span class="book-cover-mark"></span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="thumb-body">
+                                                                                        <div class="thumb-body-inner">
+                                                                                            <div class="text_orange mt-2">Part one</div>
+                                                                                            <h5>Doctrines of the Twelver Shiite (Enquiry and Response)</h5>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </li>
+
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="thumb-over-corner-tr">
+                                                                <a class="fav-ico true styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-lg-4 col-md-6 col-sm-12 mainView-item">
+                                    <div class="card mainView-card mb-3">
+                                        <div class="card-body">
+                                            <div class="thumbnail-item side-thumbnail-item">
+                                                <div class="thumb-head">
+                                                    <div class="thumb-head-inner">
+                                                        <div class="book-thumb book-thumb-sm">
+                                                            <a class="book-cover" href="#">
+                                                                <img src="../uploads/books/20170611195214.jpg" alt="book-descriptions">
+                                                                <span class="book-cover-mark"></span>
+                                                            </a>
+                                                            <div class="book-info dropdown">
+                                                                <a href="#" class="styled-icon styled-icon--xxs styled-icon--round styled-icon--borderd bg-color-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-info"></i></a>
+                                                                <div class="dropdown-menu dropdown-menu-right bg-color-light">
+                                                                    <ul class="p-4 icons-list">
+                                                                        <li><i class="ti-user"></i> المؤلف: <a href="#" class="color2 strong6"> عبد الكريم بن خالد الحربي</a> </li>
+                                                                        <li> <i class="ti-calendar"></i> تاريخ الإضافة: <strong class="strong6">22 شوال 1437هـ </strong> </li>
+                                                                        <li> <i class="ti-light-bulb"></i> آخر تحديث في: <strong class="strong6">18 شوال 1438هـ </strong> </li>
+                                                                        <li> <i class="ti-list"></i> Diwy : <strong class="strong6"> 297/46/2005</strong> </li>
+                                                                        <li> <i class="ti-files"></i> عدد الصفحات : <strong class="strong6"> 122</strong> </li>
+                                                                        <li> <i class="ti-eye"></i> Views : <strong class="strong6"> 6481</strong> </li>
+                                                                        <li> <i class="ti-download"></i> مرات التحميل : <strong class="strong6"> 98743</strong> </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="thumb-body">
+                                                    <div class="thumb-body-inner mt-1">
+                                                        <a href="#" class="thumb-body-title"><h3 class="h4">Ma'alimu Deen</h3></a>
+                                                        <a href="#" class="main-color thumb-body-alt mt-1"><i class="ti-user"></i>Author Name Here</a>
+
+                                                        <div class="thumb-body-controls">
+                                                            <a href="#" class="button btn-solid btn-small btn-alt"><i class="ti-book"></i>  Read</a>
+                                                            <a class="button btn-borderd-hover btn-small btn-main bg-color-light" href="#" role="button"><i class="ti-download"></i> Download</a>
+
+                                                            <div class="thumb-over-corner-tr">
+                                                                <a class="fav-ico  styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-lg-4 col-md-6 col-sm-12 mainView-item">
+                                    <div class="card mainView-card mb-3">
+                                        <div class="card-body">
+                                            <div class="thumbnail-item side-thumbnail-item">
+                                                <div class="thumb-head">
+                                                    <div class="thumb-head-inner">
+                                                        <div class="book-thumb book-thumb-sm">
+
+                                                            <a class="book-cover" href="#">
+                                                                <img src="../uploads/books/20170612120740.jpg" alt="book-descriptions">
+                                                                <span class="book-cover-mark"></span>
+                                                            </a>
+                                                            <div class="book-info dropdown">
+                                                                <a href="#" class="styled-icon styled-icon--xxs styled-icon--round styled-icon--borderd bg-color-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-info"></i></a>
+                                                                <div class="dropdown-menu dropdown-menu-right bg-color-light">
+                                                                    <ul class="p-4 icons-list">
+                                                                        <li><i class="ti-user"></i> المؤلف: <a href="#" class="color2 strong6"> عبد الكريم بن خالد الحربي</a> </li>
+                                                                        <li> <i class="ti-calendar"></i> تاريخ الإضافة: <strong class="strong6">22 شوال 1437هـ </strong> </li>
+                                                                        <li> <i class="ti-light-bulb"></i> آخر تحديث في: <strong class="strong6">18 شوال 1438هـ </strong> </li>
+                                                                        <li> <i class="ti-list"></i> Diwy : <strong class="strong6"> 297/46/2005</strong> </li>
+                                                                        <li> <i class="ti-files"></i> عدد الصفحات : <strong class="strong6"> 122</strong> </li>
+                                                                        <li> <i class="ti-eye"></i> Views : <strong class="strong6"> 6481</strong> </li>
+                                                                        <li> <i class="ti-download"></i> مرات التحميل : <strong class="strong6"> 98743</strong> </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="thumb-body">
+                                                    <div class="thumb-body-inner mt-1">
+                                                        <a href="#" class="thumb-body-title"><h3 class="h4">Doctrines of the Twelver Shiite (Enquiry and Response)</h3></a>
+                                                        <a href="#" class="main-color thumb-body-alt mt-1"><i class="ti-user"></i>Author Name Here</a>
+
+                                                        <div class="thumb-body-controls">
+                                                            <a href="#" class="button btn-solid btn-small btn-alt"><i class="ti-book"></i>  Read</a>
+                                                            <a class="button btn-borderd-hover btn-small btn-main bg-color-light" href="#" role="button"><i class="ti-download"></i> Download</a>
+
+                                                            <div class="thumb-over-corner-tr">
+                                                                <a class="fav-ico true styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-lg-4 col-md-6 col-sm-12 mainView-item">
+                                    <div class="card mainView-card mb-3">
+                                        <div class="card-body">
+                                            <div class="thumbnail-item side-thumbnail-item">
+                                                <div class="thumb-head">
+                                                    <div class="thumb-head-inner">
+                                                        <div class="book-thumb book-thumb-sm">
+                                                            <a class="book-cover" href="#">
+                                                                <img src="../uploads/books/20170612115040.jpg" alt="book-descriptions">
+                                                                <span class="book-cover-mark"></span>
+                                                            </a>
+                                                            <div class="book-info dropdown">
+                                                                <a href="#" class="styled-icon styled-icon--xxs styled-icon--round styled-icon--borderd bg-color-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-info"></i></a>
+                                                                <div class="dropdown-menu dropdown-menu-right bg-color-light">
+                                                                    <ul class="p-4 icons-list">
+                                                                        <li><i class="ti-user"></i> المؤلف: <a href="#" class="color2 strong6"> عبد الكريم بن خالد الحربي</a> </li>
+                                                                        <li> <i class="ti-calendar"></i> تاريخ الإضافة: <strong class="strong6">22 شوال 1437هـ </strong> </li>
+                                                                        <li> <i class="ti-light-bulb"></i> آخر تحديث في: <strong class="strong6">18 شوال 1438هـ </strong> </li>
+                                                                        <li> <i class="ti-list"></i> Diwy : <strong class="strong6"> 297/46/2005</strong> </li>
+                                                                        <li> <i class="ti-files"></i> عدد الصفحات : <strong class="strong6"> 122</strong> </li>
+                                                                        <li> <i class="ti-eye"></i> Views : <strong class="strong6"> 6481</strong> </li>
+                                                                        <li> <i class="ti-download"></i> مرات التحميل : <strong class="strong6"> 98743</strong> </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="thumb-body">
+                                                    <div class="thumb-body-inner mt-1">
+                                                        <a href="#" class="thumb-body-title"><h3 class="h4">Doctrines of the Twelver Shiite (Enquiry and Response)</h3></a>
+                                                        <a href="#" class="main-color thumb-body-alt mt-1"><i class="ti-user"></i>Author Name Here</a>
+
+                                                        <div class="thumb-body-controls">
+                                                            <a href="#" class="button btn-solid btn-small btn-alt"><i class="ti-book"></i>  Read</a>
+                                                            <a class="button btn-borderd-hover btn-small btn-main bg-color-light" href="#" role="button"><i class="ti-download"></i> Download</a>
+
+                                                            <div class="thumb-over-corner-tr">
+                                                                <a class="fav-ico styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-lg-4 col-md-6 col-sm-12 mainView-item">
+                                    <div class="card mainView-card mb-3">
+                                        <div class="card-body">
+                                            <div class="thumbnail-item side-thumbnail-item">
+                                                <div class="thumb-head">
+                                                    <div class="thumb-head-inner">
+                                                        <div class="book-thumb book-thumb-sm">
+                                                            <a class="book-cover" href="#">
+                                                                <img src="../uploads/books/20170611193829.jpg" alt="book-descriptions">
+                                                                <span class="book-cover-mark"></span>
+                                                            </a>
+                                                            <div class="book-info dropdown">
+                                                                <a href="#" class="styled-icon styled-icon--xxs styled-icon--round styled-icon--borderd bg-color-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-info"></i></a>
+                                                                <div class="dropdown-menu dropdown-menu-right bg-color-light">
+                                                                    <ul class="p-4 icons-list">
+                                                                        <li><i class="ti-user"></i> Author: <a href="#" class="color2 strong6">Abdul Shakoor Farooqui of lucknow</a> </li>
+                                                                        <li> <i class="ti-world"></i> Translate: <a href="#" class="color2 strong6">Salim al-Hassani</a> </li>
+                                                                        <li> <i class="ti-calendar"></i> Date Relese: <strong class="strong6">17 Shawal 1437 Hijri </strong> </li>
+                                                                        <li> <i class="ti-light-bulb"></i> Last Update: <strong class="strong6">18 Muharam 1437 Hijri </strong> </li>
+                                                                        <li> <i class="ti-list"></i> Diwy : <strong class="strong6"> 297/46/2005</strong> </li>
+                                                                        <li> <i class="ti-files"></i> Pages: <strong class="strong6"> 345</strong> </li>
+                                                                        <li> <i class="ti-eye"></i> Views : <strong class="strong6"> 6481</strong> </li>
+                                                                        <li> <i class="ti-download"></i> Downloads : <strong class="strong6"> 6481</strong> </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="thumb-body">
+                                                    <div class="thumb-body-inner mt-1">
+                                                        <a href="#" class="thumb-body-title"><h3 class="h4">Virtues and Outstanding Traits of Sayyidunā ʿUmar ibn al-Khaṭṭāb al- Fārūq</h3></a>
+                                                        <a href="#" class="main-color thumb-body-alt mt-1"><i class="ti-user"></i>Author Name Here</a>
+
+                                                        <div class="thumb-body-controls">
+                                                            <a href="#" class="button btn-solid btn-small btn-alt"><i class="ti-book"></i>  Read</a>
+                                                            <a class="button btn-borderd-hover btn-small btn-main bg-color-light" href="#" role="button"><i class="ti-download"></i> Download</a>
+
+                                                            <div class="thumb-over-corner-tr">
+                                                                <a class="fav-ico styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-lg-4 col-md-6 col-sm-12 mainView-item">
+                                    <div class="card mainView-card mb-3">
+                                        <div class="card-body">
+                                            <div class="thumbnail-item side-thumbnail-item">
+                                                <div class="thumb-head">
+                                                    <div class="thumb-head-inner">
+                                                        <div class="book-thumb book-thumb-sm">
+
+                                                            <a class="book-cover" href="#">
+                                                                <img src="../uploads/books/20170612112345.jpg" alt="book-descriptions">
+                                                                <span class="book-cover-mark"></span>
+                                                            </a>
+                                                            <div class="book-info dropdown">
+                                                                <a href="#" class="styled-icon styled-icon--xxs styled-icon--round styled-icon--borderd bg-color-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-info"></i></a>
+                                                                <div class="dropdown-menu dropdown-menu-right bg-color-light">
+                                                                    <ul class="p-4 icons-list">
+                                                                        <li><i class="ti-user"></i> Author: <a href="#" class="color2 strong6">Abdul Shakoor Farooqui of lucknow</a> </li>
+                                                                        <li> <i class="ti-world"></i> Translate: <a href="#" class="color2 strong6">Salim al-Hassani</a> </li>
+                                                                        <li> <i class="ti-calendar"></i> Date Relese: <strong class="strong6">17 Shawal 1437 Hijri </strong> </li>
+                                                                        <li> <i class="ti-light-bulb"></i> Last Update: <strong class="strong6">18 Muharam 1437 Hijri </strong> </li>
+                                                                        <li> <i class="ti-list"></i> Diwy : <strong class="strong6"> 297/46/2005</strong> </li>
+                                                                        <li> <i class="ti-files"></i> Pages: <strong class="strong6"> 345</strong> </li>
+                                                                        <li> <i class="ti-eye"></i> Views : <strong class="strong6"> 6481</strong> </li>
+                                                                        <li> <i class="ti-download"></i> Downloads : <strong class="strong6"> 6481</strong> </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="thumb-body">
+                                                    <div class="thumb-body-inner mt-1">
+                                                        <a href="#" class="thumb-body-title"><h3 class="h4">Virtues and Outstanding Traits of Sayyidunā</h3></a>
+                                                        <a href="#" class="main-color thumb-body-alt mt-1"><i class="ti-user"></i>Author Name Here</a>
+
+                                                        <div class="thumb-body-controls">
+                                                            <a href="#" class="button btn-solid btn-small btn-alt"><i class="ti-book"></i>  Read</a>
+                                                            <a class="button btn-borderd-hover btn-small btn-main bg-color-light" href="#" role="button"><i class="ti-download"></i> Download</a>
+
+                                                            <div class="thumb-over-corner-tr">
+                                                                <a class="fav-ico styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="col-lg-12 mb-3">
+                                    <div class="card">
+                                        <h1 class="strong text-center color2" style="line-height: 150px">إعلان هنا</h1>
+                                    </div>
+                                </li>
+
+                                <li class="col-lg-4 col-md-6 col-sm-12 mainView-item">
+                                    <div class="card mainView-card mb-3">
+                                        <div class="card-body">
+                                            <div class="thumbnail-item side-thumbnail-item">
+                                                <div class="thumb-head">
+                                                    <div class="thumb-head-inner">
+                                                        <div class="book-thumb book-thumb-sm book-withParts">
+                                                            <div class="book-parts-patch">
+                                                                <span>5 parts</span>
+                                                            </div>
+
+                                                            <a class="book-cover" href="#">
+                                                                <img src="../uploads/books/20170611195214.jpg" alt="book-descriptions">
+                                                                <span class="book-cover-mark"></span>
+                                                            </a>
+
+                                                            <div class="book-info dropdown">
+                                                                <a href="#" class="styled-icon styled-icon--xxs styled-icon--round styled-icon--borderd bg-color-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-info"></i></a>
+                                                                <div class="dropdown-menu dropdown-menu-right bg-color-light">
+                                                                    <ul class="p-4 icons-list">
+                                                                        <li><i class="ti-user"></i> Author: <a href="#" class="color2 strong6">Abdul Shakoor Farooqui of lucknow</a> </li>
+                                                                        <li> <i class="ti-world"></i> Translate: <a href="#" class="color2 strong6">Salim al-Hassani</a> </li>
+                                                                        <li> <i class="ti-calendar"></i> Date Relese: <strong class="strong6">17 Shawal 1437 Hijri </strong> </li>
+                                                                        <li> <i class="ti-light-bulb"></i> Last Update: <strong class="strong6">18 Muharam 1437 Hijri </strong> </li>
+                                                                        <li> <i class="ti-list"></i> Diwy : <strong class="strong6"> 297/46/2005</strong> </li>
+                                                                        <li> <i class="ti-files"></i> Pages: <strong class="strong6"> 345</strong> </li>
+                                                                        <li> <i class="ti-eye"></i> Views : <strong class="strong6"> 6481</strong> </li>
+                                                                        <li> <i class="ti-download"></i> Downloads : <strong class="strong6"> 6481</strong> </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="thumb-body">
+                                                    <div class="thumb-body-inner mt-1">
+                                                        <a href="#" class="thumb-body-title"><h3 class="h4">Answering the Baseless Shīʿī Allegations Against</h3></a>
+                                                        <a href="#" class="main-color thumb-body-alt mt-1"><i class="ti-user"></i>Author Name Here</a>
+
+                                                        <div class="thumb-body-controls">
+                                                            <div class="dropdown inline-block">
+                                                                <a class="button btn-solid btn-small btn-orange dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  View Parts<i class="ti-angle-down"></i></a>
+                                                                <div class="dropdown-menu ">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <div class="dropdown-item-block">
+                                                                                <a href="#" class="thumbnail-item side-thumbnail-item">
+                                                                                    <div class="thumb-head">
+                                                                                        <div class="thumb-head-inner">
+                                                                                            <div class="book-thumb" style="width: 50px">
+                                                                                                <div class="book-cover">
+                                                                                                    <img src="../uploads/book-1.jpg" alt="book-descriptions">
+                                                                                                    <span class="book-cover-mark"></span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="thumb-body">
+                                                                                        <div class="thumb-body-inner">
+                                                                                            <div class="text_orange mt-2">Part one</div>
+                                                                                            <h5>Doctrines of the Twelver Shiite (Enquiry and Response)</h5>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </li>
+
+                                                                        <li>
+                                                                            <div class="dropdown-item-block">
+                                                                                <a href="#" class="thumbnail-item side-thumbnail-item">
+                                                                                    <div class="thumb-head">
+                                                                                        <div class="thumb-head-inner">
+                                                                                            <div class="book-thumb" style="width: 50px">
+                                                                                                <div class="book-cover">
+                                                                                                    <img src="../uploads/book-1.jpg" alt="book-descriptions">
+                                                                                                    <span class="book-cover-mark"></span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="thumb-body">
+                                                                                        <div class="thumb-body-inner">
+                                                                                            <div class="text_orange mt-2">Part one</div>
+                                                                                            <h5>Doctrines of the Twelver Shiite (Enquiry and Response)</h5>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </li>
+
+                                                                        <li>
+                                                                            <div class="dropdown-item-block">
+                                                                                <a href="#" class="thumbnail-item side-thumbnail-item">
+                                                                                    <div class="thumb-head">
+                                                                                        <div class="thumb-head-inner">
+                                                                                            <div class="book-thumb" style="width: 50px">
+                                                                                                <div class="book-cover">
+                                                                                                    <img src="../uploads/book-1.jpg" alt="book-descriptions">
+                                                                                                    <span class="book-cover-mark"></span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="thumb-body">
+                                                                                        <div class="thumb-body-inner">
+                                                                                            <div class="text_orange mt-2">Part one</div>
+                                                                                            <h5>Doctrines of the Twelver Shiite (Enquiry and Response)</h5>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </li>
+
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="thumb-over-corner-tr">
+                                                                <a class="fav-ico true styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-lg-4 col-md-6 col-sm-12 mainView-item">
+                                    <div class="card mainView-card mb-3">
+                                        <div class="card-body">
+                                            <div class="thumbnail-item side-thumbnail-item">
+                                                <div class="thumb-head">
+                                                    <div class="thumb-head-inner">
+                                                        <div class="book-thumb book-thumb-sm">
+                                                            <a class="book-cover" href="#">
+                                                                <img src="../uploads/books/20170611195214.jpg" alt="book-descriptions">
+                                                                <span class="book-cover-mark"></span>
+                                                            </a>
+                                                            <div class="book-info dropdown">
+                                                                <a href="#" class="styled-icon styled-icon--xxs styled-icon--round styled-icon--borderd bg-color-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-info"></i></a>
+                                                                <div class="dropdown-menu dropdown-menu-right bg-color-light">
+                                                                    <ul class="p-4 icons-list">
+                                                                        <li><i class="ti-user"></i> المؤلف: <a href="#" class="color2 strong6"> عبد الكريم بن خالد الحربي</a> </li>
+                                                                        <li> <i class="ti-calendar"></i> تاريخ الإضافة: <strong class="strong6">22 شوال 1437هـ </strong> </li>
+                                                                        <li> <i class="ti-light-bulb"></i> آخر تحديث في: <strong class="strong6">18 شوال 1438هـ </strong> </li>
+                                                                        <li> <i class="ti-list"></i> Diwy : <strong class="strong6"> 297/46/2005</strong> </li>
+                                                                        <li> <i class="ti-files"></i> عدد الصفحات : <strong class="strong6"> 122</strong> </li>
+                                                                        <li> <i class="ti-eye"></i> Views : <strong class="strong6"> 6481</strong> </li>
+                                                                        <li> <i class="ti-download"></i> مرات التحميل : <strong class="strong6"> 98743</strong> </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="thumb-body">
+                                                    <div class="thumb-body-inner mt-1">
+                                                        <a href="#" class="thumb-body-title"><h3 class="h4">Ma'alimu Deen</h3></a>
+                                                        <a href="#" class="main-color thumb-body-alt mt-1"><i class="ti-user"></i>Author Name Here</a>
+
+                                                        <div class="thumb-body-controls">
+                                                            <a href="#" class="button btn-solid btn-small btn-alt"><i class="ti-book"></i>  Read</a>
+                                                            <a class="button btn-borderd-hover btn-small btn-main bg-color-light" href="#" role="button"><i class="ti-download"></i> Download</a>
+
+                                                            <div class="thumb-over-corner-tr">
+                                                                <a class="fav-ico  styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-lg-4 col-md-6 col-sm-12 mainView-item">
+                                    <div class="card mainView-card mb-3">
+                                        <div class="card-body">
+                                            <div class="thumbnail-item side-thumbnail-item">
+                                                <div class="thumb-head">
+                                                    <div class="thumb-head-inner">
+                                                        <div class="book-thumb book-thumb-sm">
+
+                                                            <a class="book-cover" href="#">
+                                                                <img src="../uploads/books/20170612120740.jpg" alt="book-descriptions">
+                                                                <span class="book-cover-mark"></span>
+                                                            </a>
+                                                            <div class="book-info dropdown">
+                                                                <a href="#" class="styled-icon styled-icon--xxs styled-icon--round styled-icon--borderd bg-color-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-info"></i></a>
+                                                                <div class="dropdown-menu dropdown-menu-right bg-color-light">
+                                                                    <ul class="p-4 icons-list">
+                                                                        <li><i class="ti-user"></i> المؤلف: <a href="#" class="color2 strong6"> عبد الكريم بن خالد الحربي</a> </li>
+                                                                        <li> <i class="ti-calendar"></i> تاريخ الإضافة: <strong class="strong6">22 شوال 1437هـ </strong> </li>
+                                                                        <li> <i class="ti-light-bulb"></i> آخر تحديث في: <strong class="strong6">18 شوال 1438هـ </strong> </li>
+                                                                        <li> <i class="ti-list"></i> Diwy : <strong class="strong6"> 297/46/2005</strong> </li>
+                                                                        <li> <i class="ti-files"></i> عدد الصفحات : <strong class="strong6"> 122</strong> </li>
+                                                                        <li> <i class="ti-eye"></i> Views : <strong class="strong6"> 6481</strong> </li>
+                                                                        <li> <i class="ti-download"></i> مرات التحميل : <strong class="strong6"> 98743</strong> </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="thumb-body">
+                                                    <div class="thumb-body-inner mt-1">
+                                                        <a href="#" class="thumb-body-title"><h3 class="h4">Doctrines of the Twelver Shiite (Enquiry and Response)</h3></a>
+                                                        <a href="#" class="main-color thumb-body-alt mt-1"><i class="ti-user"></i>Author Name Here</a>
+
+                                                        <div class="thumb-body-controls">
+                                                            <a href="#" class="button btn-solid btn-small btn-alt"><i class="ti-book"></i>  Read</a>
+                                                            <a class="button btn-borderd-hover btn-small btn-main bg-color-light" href="#" role="button"><i class="ti-download"></i> Download</a>
+
+                                                            <div class="thumb-over-corner-tr">
+                                                                <a class="fav-ico true styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-lg-4 col-md-6 col-sm-12 mainView-item">
+                                    <div class="card mainView-card mb-3">
+                                        <div class="card-body">
+                                            <div class="thumbnail-item side-thumbnail-item">
+                                                <div class="thumb-head">
+                                                    <div class="thumb-head-inner">
+                                                        <div class="book-thumb book-thumb-sm">
+                                                            <a class="book-cover" href="#">
+                                                                <img src="../uploads/books/20170612115040.jpg" alt="book-descriptions">
+                                                                <span class="book-cover-mark"></span>
+                                                            </a>
+                                                            <div class="book-info dropdown">
+                                                                <a href="#" class="styled-icon styled-icon--xxs styled-icon--round styled-icon--borderd bg-color-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-info"></i></a>
+                                                                <div class="dropdown-menu dropdown-menu-right bg-color-light">
+                                                                    <ul class="p-4 icons-list">
+                                                                        <li><i class="ti-user"></i> المؤلف: <a href="#" class="color2 strong6"> عبد الكريم بن خالد الحربي</a> </li>
+                                                                        <li> <i class="ti-calendar"></i> تاريخ الإضافة: <strong class="strong6">22 شوال 1437هـ </strong> </li>
+                                                                        <li> <i class="ti-light-bulb"></i> آخر تحديث في: <strong class="strong6">18 شوال 1438هـ </strong> </li>
+                                                                        <li> <i class="ti-list"></i> Diwy : <strong class="strong6"> 297/46/2005</strong> </li>
+                                                                        <li> <i class="ti-files"></i> عدد الصفحات : <strong class="strong6"> 122</strong> </li>
+                                                                        <li> <i class="ti-eye"></i> Views : <strong class="strong6"> 6481</strong> </li>
+                                                                        <li> <i class="ti-download"></i> مرات التحميل : <strong class="strong6"> 98743</strong> </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="thumb-body">
+                                                    <div class="thumb-body-inner mt-1">
+                                                        <a href="#" class="thumb-body-title"><h3 class="h4">Doctrines of the Twelver Shiite (Enquiry and Response)</h3></a>
+                                                        <a href="#" class="main-color thumb-body-alt mt-1"><i class="ti-user"></i>Author Name Here</a>
+
+                                                        <div class="thumb-body-controls">
+                                                            <a href="#" class="button btn-solid btn-small btn-alt"><i class="ti-book"></i>  Read</a>
+                                                            <a class="button btn-borderd-hover btn-small btn-main bg-color-light" href="#" role="button"><i class="ti-download"></i> Download</a>
+
+                                                            <div class="thumb-over-corner-tr">
+                                                                <a class="fav-ico styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-lg-4 col-md-6 col-sm-12 mainView-item">
+                                    <div class="card mainView-card mb-3">
+                                        <div class="card-body">
+                                            <div class="thumbnail-item side-thumbnail-item">
+                                                <div class="thumb-head">
+                                                    <div class="thumb-head-inner">
+                                                        <div class="book-thumb book-thumb-sm">
+                                                            <a class="book-cover" href="#">
+                                                                <img src="../uploads/books/20170611193829.jpg" alt="book-descriptions">
+                                                                <span class="book-cover-mark"></span>
+                                                            </a>
+                                                            <div class="book-info dropdown">
+                                                                <a href="#" class="styled-icon styled-icon--xxs styled-icon--round styled-icon--borderd bg-color-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-info"></i></a>
+                                                                <div class="dropdown-menu dropdown-menu-right bg-color-light">
+                                                                    <ul class="p-4 icons-list">
+                                                                        <li><i class="ti-user"></i> Author: <a href="#" class="color2 strong6">Abdul Shakoor Farooqui of lucknow</a> </li>
+                                                                        <li> <i class="ti-world"></i> Translate: <a href="#" class="color2 strong6">Salim al-Hassani</a> </li>
+                                                                        <li> <i class="ti-calendar"></i> Date Relese: <strong class="strong6">17 Shawal 1437 Hijri </strong> </li>
+                                                                        <li> <i class="ti-light-bulb"></i> Last Update: <strong class="strong6">18 Muharam 1437 Hijri </strong> </li>
+                                                                        <li> <i class="ti-list"></i> Diwy : <strong class="strong6"> 297/46/2005</strong> </li>
+                                                                        <li> <i class="ti-files"></i> Pages: <strong class="strong6"> 345</strong> </li>
+                                                                        <li> <i class="ti-eye"></i> Views : <strong class="strong6"> 6481</strong> </li>
+                                                                        <li> <i class="ti-download"></i> Downloads : <strong class="strong6"> 6481</strong> </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="thumb-body">
+                                                    <div class="thumb-body-inner mt-1">
+                                                        <a href="#" class="thumb-body-title"><h3 class="h4">Virtues and Outstanding Traits of Sayyidunā ʿUmar ibn al-Khaṭṭāb al- Fārūq</h3></a>
+                                                        <a href="#" class="main-color thumb-body-alt mt-1"><i class="ti-user"></i>Author Name Here</a>
+
+                                                        <div class="thumb-body-controls">
+                                                            <a href="#" class="button btn-solid btn-small btn-alt"><i class="ti-book"></i>  Read</a>
+                                                            <a class="button btn-borderd-hover btn-small btn-main bg-color-light" href="#" role="button"><i class="ti-download"></i> Download</a>
+
+                                                            <div class="thumb-over-corner-tr">
+                                                                <a class="fav-ico styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="col-lg-4 col-md-6 col-sm-12 mainView-item">
+                                    <div class="card mainView-card mb-3">
+                                        <div class="card-body">
+                                            <div class="thumbnail-item side-thumbnail-item">
+                                                <div class="thumb-head">
+                                                    <div class="thumb-head-inner">
+                                                        <div class="book-thumb book-thumb-sm">
+
+                                                            <a class="book-cover" href="#">
+                                                                <img src="../uploads/books/20170612112345.jpg" alt="book-descriptions">
+                                                                <span class="book-cover-mark"></span>
+                                                            </a>
+                                                            <div class="book-info dropdown">
+                                                                <a href="#" class="styled-icon styled-icon--xxs styled-icon--round styled-icon--borderd bg-color-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-info"></i></a>
+                                                                <div class="dropdown-menu dropdown-menu-right bg-color-light">
+                                                                    <ul class="p-4 icons-list">
+                                                                        <li><i class="ti-user"></i> Author: <a href="#" class="color2 strong6">Abdul Shakoor Farooqui of lucknow</a> </li>
+                                                                        <li> <i class="ti-world"></i> Translate: <a href="#" class="color2 strong6">Salim al-Hassani</a> </li>
+                                                                        <li> <i class="ti-calendar"></i> Date Relese: <strong class="strong6">17 Shawal 1437 Hijri </strong> </li>
+                                                                        <li> <i class="ti-light-bulb"></i> Last Update: <strong class="strong6">18 Muharam 1437 Hijri </strong> </li>
+                                                                        <li> <i class="ti-list"></i> Diwy : <strong class="strong6"> 297/46/2005</strong> </li>
+                                                                        <li> <i class="ti-files"></i> Pages: <strong class="strong6"> 345</strong> </li>
+                                                                        <li> <i class="ti-eye"></i> Views : <strong class="strong6"> 6481</strong> </li>
+                                                                        <li> <i class="ti-download"></i> Downloads : <strong class="strong6"> 6481</strong> </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="thumb-body">
+                                                    <div class="thumb-body-inner mt-1">
+                                                        <a href="#" class="thumb-body-title"><h3 class="h4">Virtues and Outstanding Traits of Sayyidunā</h3></a>
+                                                        <a href="#" class="main-color thumb-body-alt mt-1"><i class="ti-user"></i>Author Name Here</a>
+
+                                                        <div class="thumb-body-controls">
+                                                            <a href="#" class="button btn-solid btn-small btn-alt"><i class="ti-book"></i>  Read</a>
+                                                            <a class="button btn-borderd-hover btn-small btn-main bg-color-light" href="#" role="button"><i class="ti-download"></i> Download</a>
+
+                                                            <div class="thumb-over-corner-tr">
+                                                                <a class="fav-ico styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                            </ul>
+
+                            <div class="text-center mt-4 mb-4">
+
+                                <ul class="pagination">
+                                    <li class="page-item page-item-previous">
+                                        <a class="page-link" href="#" aria-label="Previous">
+                                            <span aria-hidden="true"><i class="ti-angle-left"></i></span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item "><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item disabled"><a class="page-link" href="#">4</a></li>
+                                    <li class="page-item active"><a class="page-link" href="#">5</a></li>
+                                    <li class="page-item"><span class="pagination-sep">...</span></li>
+                                    <li class="page-item"><a class="page-link" href="#">12</a></li>
+                                    <li class="page-item page-item-next">
+                                        <a class="page-link" href="#" aria-label="Next">
+                                            <span aria-hidden="true"><i class="ti-angle-right"></i></span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                {% include 'FrontBundle:Main/include:footer.html.twig' %}
+
+
+            </section>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+    <!-- End of main-wrapper -->
+    <span class="menu-trigger menu-trigger-overlay"></span>
+    <a class="scrollup"><i class="ti-arrow-up"></i></a>
+
+
+    {% include 'FrontBundle:Main/include:login_modal.html.twig' %}
+
+
+
+
+
+{% endblock %}

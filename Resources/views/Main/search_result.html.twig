@@ -1,0 +1,300 @@
+{% extends ':front:base.html.twig' %}
+
+{% set highlighting = result.getHighlighting() %}
+
+{% block content %}
+    <body id="body">
+    <!-- class="start-menuHide side-menu-hidden" -->
+    <div class="main-wrapper" id="main-wrapper">
+        {% include 'FrontBundle:Main/include:header.html.twig' %}
+        <div class="main-content">
+            <aside id="side-navigation">
+                <div class="side-navigation-inner">
+                    <h4 class="h5 strong6 main-color p-3 sideMenuHead">
+                        <a href="#" class="styled-icon styled-icon--xs styled-icon--round menu-trigger main-color "> <i class="ti-close"></i> </a>
+                        <a href="#" class="main-logo d-inline-block align-top"> <img src="{{ asset('bundles/front/img/logo.jpg') }}" alt=""></a>
+                    </h4>
+                    <div class="side-nav">
+                        {% include 'FrontBundle:Main/include:side_menu.html.twig' %}
+                        {% include 'FrontBundle:Main/include:side_nav_tabs.html.twig' %}
+                    </div>
+                </div>
+            </aside>
+            <section id="main-sec">
+                <div id="mainView" class="mainView-list">
+                    <div class="main-sec-header">
+                        <div class="main-page-header-top p-4">
+                            <div class="page-header-top-title">
+                                <h1 class="h2 mb-0">
+                                <span class="styled-icon styled-icon-imgCenter styled-icon--sm styled-icon--dark bg-alt">
+                                    <i class="ti-search"></i>
+                                </span>
+                                    <span class="page-header-top-text"> {{ 'front.search.search_for'|trans }}:
+                                        <strong class="color2">{{ search }}</strong></span>
+                                </h1>
+                            </div>
+                            <div class="page-header-top-side mr-auto">
+                                <ul class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="{{ path('front_main_index') }}">{{ 'front.main_side_menu.home'|trans }}</a></li>
+                                    <li class="breadcrumb-item"><a href="{{ path('front_main_all_books') }}">{{ 'front.main.books'|trans }}</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">{{ 'front.search.search'|trans }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="head-title">
+                            <div class="search-tabs-inner">
+                                <ul class="tabs-nav nav nav-lines nav-lines-md" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-toggle="tab" href="#bookSearch" role="tab">
+                                            {{ result.numFound }} {{ 'front.main.books_matched'|trans }}
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#authorSearch" role="tab">
+                                            {{ persons.numFound }} {{ 'front.main_side_menu.authors'|trans }}
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#translatorSearch" role="tab">
+                                            {{ persons.numFound }} {{ 'front.main_side_menu.translators'|trans }}
+                                        </a>
+                                    </li>
+                                    <li class="nav-item ml-auto side-filters-trigger">
+                                        <a class="nav-link">
+                                        <span class="styled-icon styled-icon--xxs styled-icon--dark bg-color ml-1 mr-1">
+                                            <i class="ti-filter"></i>
+                                        </span>
+                                            <span class="main-color"> {{ 'front.search.search_category'|trans }}</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="main-page-header-bottom head-title">
+                            <div class="sorting-head">
+                                <div class="sorting-head-inner">
+                                    <div class="form-control-icon">
+                                        <span class="input-icon"><i class="ti-arrows-vertical"></i></span>
+                                        <select class="select-filter-nosearch form-control input-lg">
+                                            <option value="top_views">{{ 'front.sort.sort_by_top_views'|trans }}</option>
+                                            <option value="top_downloads">{{ 'front.sort.sort_by_top_downloads'|trans }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="mainView-toggles">
+                                <li><a class="mainView-normal-trig"><i class="ti-view-grid"></i></a></li>
+                                <li><a class="mainView-list-trig"><i class="ti-view-list"></i></a></li>
+                                <li><a class="mainView-compact-trig"><i class="ti-align-justify"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="bookSearch" role="tabpanel">
+                            <div class="main-sec-inner mainView-content p-4">
+                                <div class="page-cards">
+                                    <ul class="row tight-row">
+                                        {% for allBook in result %}
+
+                                            <li class="col-lg-4 col-md-6 col-sm-12 mainView-item">
+                                                <div class="card mainView-card mb-3">
+                                                    <div class="card-body">
+                                                        <div class="thumbnail-item side-thumbnail-item">
+                                                            <div class="thumb-head">
+                                                                <div class="thumb-head-inner">
+                                                                    <div class="book-thumb book-thumb-sm book-withParts">
+
+                                                                        <a class="book-cover" href="{{ path('front_book_book_details', {'id': allBook.id}) }}">
+                                                                            <img src="{{ asset(allBook.photo) }}" alt="{{ allBook.summary }}">
+                                                                            <span class="book-cover-mark"></span>
+                                                                        </a>
+                                                                        <div class="book-info dropdown">
+                                                                            <a href="#" class="styled-icon styled-icon--xxs styled-icon--round styled-icon--borderd bg-color-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-info"></i></a>
+                                                                            <div class="dropdown-menu dropdown-menu-right bg-color-light">
+                                                                                <ul class="p-4 icons-list">
+                                                                                    <li><i class="ti-user"></i> {{ 'front.main.author'|trans }}: <a href="#" class="color2 strong6">
+                                                                                        {% for authorName in globalVarService.getAuthorDetails(allBook.author_id, app.request.locale) %}
+                                                                                            {{ authorName.name }}
+                                                                                        {% endfor %}
+                                                                                    </a> </li>
+                                                                                    <li> <i class="ti-world"></i> {{ 'front.main.translator'|trans }}: <a href="#" class="color2 strong6">
+                                                                                        {% for translatorName in globalVarService.getTranslatorDetails(allBook.translator_id, app.request.locale) %}
+                                                                                            {{ translatorName.name }}
+                                                                                        {% endfor %}
+                                                                                    </a> </li>
+                                                                                    {#<li> <i class="ti-calendar"></i> {{ 'front.main.date_released'|trans }}: <strong class="strong6">{{ HijriDate.toHijriDate(allBook.created_at) }} {{ 'admin.titles.hijri'|trans }}</strong> </li>#}
+                                                                                    {#<li> <i class="ti-list"></i> {{ 'front.main.diwy'|trans }} : <strong class="strong6"> 11111</strong> </li>#}
+                                                                                    <li> <i class="ti-files"></i> {{ 'front.main.pages'|trans }}: <strong class="strong6"> {{ allBook.num_page }}</strong> </li>
+                                                                                    <li> <i class="ti-eye"></i> {{ 'front.main.views'|trans }} : <strong class="strong6"> {{ allBook.views }}</strong> </li>
+                                                                                    <li> <i class="ti-download"></i> {{ 'front.main.downloads'|trans }} : <strong class="strong6"> {{ allBook.downloads }}</strong> </li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="thumb-body">
+                                                                <div class="thumb-body-inner mt-1">
+                                                                    <a href="{{ path('front_book_book_details', {'id': allBook.id}) }}" class="thumb-body-title">
+                                                                        <h3 class="h4">
+                                                                            {{ allBook.title }}
+                                                                        </h3>
+                                                                    </a>
+
+                                                                    {#<a href="{{ path('front_main_author_details', {'id': authorId}) }}" class="main-color thumb-body-alt mt-1"><i class="ti-user"></i>#}
+                                                                        {#{% for authorName in globalVarService.getAuthorDetails(authorId, app.request.locale) %}#}
+                                                                            {#{{ authorName.name }}#}
+                                                                        {#{% endfor %}#}
+                                                                    {#</a>#}
+
+                                                                    <div class="thumb-body-controls">
+                                                                        <div class="dropdown inline-block">
+
+                                                                            <a href="{{ path('front_book_book_details', {'id': allBook.id}) }}" class="button btn-solid btn-small btn-alt"><i class="ti-book"></i>  {{ 'front.main.read'|trans }}</a>
+                                                                            <a class="button btn-solid btn-small btn-orange dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">  {{ 'front.main.view_parts'|trans }}<i class="ti-angle-down"></i></a>
+                                                                            <div class="dropdown-menu ">
+                                                                                <ul>
+                                                                                    {#{% for otherPart in globalVarService.getOtherBookParts(allBook.collection) %}#}
+                                                                                    <li>
+                                                                                        <div class="dropdown-item-block">
+                                                                                            <a href="#" class="thumbnail-item side-thumbnail-item">
+                                                                                                <div class="thumb-head">
+                                                                                                    <div class="thumb-head-inner">
+                                                                                                        <div class="book-thumb" style="width: 50px">
+                                                                                                            <div class="book-cover">
+                                                                                                                <img src="../uploads/book-1.jpg" alt="book-descriptions">
+                                                                                                                <span class="book-cover-mark"></span>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="thumb-body">
+                                                                                                    <div class="thumb-body-inner">
+                                                                                                        {#<div class="text_orange mt-2">Part one</div>#}
+                                                                                                        <h5>Doctrines of the Twelver Shiite (Enquiry and Response)</h5>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </a>
+                                                                                        </div>
+                                                                                    </li>
+                                                                                    {#{% endfor %}#}
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="thumb-over-corner-tr">
+                                                                            <a class="fav-ico true styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                    <div class="text-center mt-4 mb-4">
+                                        {#{{ knp_pagination_render(result) }}#}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="authorSearch" role="tabpanel">
+                            <div class="main-sec-inner p-4">
+                                <div class="page-cards">
+                                    <ul class="row tight-row">
+
+                                    {% for person in persons %}
+                                        {% if person.num_active_authorized != 0 %}
+                                        <li class="col-lg-6th col-lg-3 col-md-4 col-sm-6 col-xs-6 mainView-item user-item">
+                                            <div class="card mainView-card mb-3">
+                                                <div class="card-body">
+                                                    <div class="thumbnail-item">
+                                                        <div class="thumb-head">
+                                                            <div class="thumb-head-inner">
+                                                                <a href="#" class="styled-icon styled-icon--lg styled-icon--borderd styled-icon--round bg-color-light styled-icon-img mb-2">
+                                                                    {% if person.photo is defined %}
+                                                                        <img src="{{ asset(person.photo) }}" alt="image descriptions">
+                                                                    {% endif %}
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="thumb-body">
+                                                            <div class="thumb-body-inner mt-1">
+                                                                {% set person_name = person['name_' ~ app.request.locale] %}
+                                                                {% if person_name is defined %}
+                                                                    <a href="{{ person.id }}" class="thumb-body-title"><h4 class="h5">{{ person_name }}</h4></a>
+                                                                {% endif %}
+                                                                <a href="#" class="main-color strong6 thumb-body-alt mt-1">{{ person.num_active_authorized }} {{ 'front.book.book_add'|trans }}</a>
+                                                                <div class="thumb-body-controls">
+                                                                    <a href="{{ path('front_user_follow_author', {'id': person.id }) }}"
+                                                                       class="button btn-solid btn-small btn-alt">{{ 'front.main.follow'|trans }}</a>
+                                                                    <a class="button btn-borderd-hover btn-small btn-main bg-color-light"
+                                                                       href="{{ path('front_main_author_details', {'id': person.id }) }}">{{ 'front.main.profile'|trans }}</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        {% endif %}
+                                    {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="translatorSearch" role="tabpanel">
+                            <div class="main-sec-inner p-4">
+                                <div class="page-cards">
+                                    <ul class="row tight-row">
+                                        {% for person in persons %}
+                                            {% if person.num_active_translated != 0 %}
+                                            <li class="col-lg-6th col-lg-3 col-md-4 col-sm-6 col-xs-6 mainView-item user-item">
+                                                <div class="card mainView-card mb-3">
+                                                    <div class="card-body">
+                                                        <div class="thumbnail-item">
+                                                            <div class="thumb-head">
+                                                                <div class="thumb-head-inner">
+                                                                    <a href="#" class="styled-icon styled-icon--lg styled-icon--borderd styled-icon--round bg-color-light styled-icon-img mb-2">
+                                                                        <img src="{{ asset(person.photo) }}" alt="image descriptions">
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="thumb-body">
+                                                                <div class="thumb-body-inner mt-1">
+                                                                    {% set person_name = person['name_' ~ app.request.locale] %}
+                                                                    {% if person_name is defined %}
+                                                                        <a href="{{ person.id }}" class="thumb-body-title"><h4 class="h5">{{ person_name }}</h4></a>
+                                                                    {% endif %}
+                                                                    <a href="#" class="main-color strong6 thumb-body-alt mt-1">{{ person.num_active_translated }} {{ 'front.book.book_add'|trans }}</a>
+                                                                    <div class="thumb-body-controls">
+                                                                        <a href="{{ path('front_user_follow_author', {'id': person.id }) }}"
+                                                                           class="button btn-solid btn-small btn-alt">{{ 'front.main.follow'|trans }}</a>
+                                                                        <a class="button btn-borderd-hover btn-small btn-main bg-color-light"
+                                                                           href="{{ path('front_main_author_details', {'id': person.id }) }}">{{ 'front.main.profile'|trans }}</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              {% include 'FrontBundle:Main/include:footer.html.twig' %}
+            </section>
+        </div>
+    </div>
+    <!-- End of main-wrapper -->
+    <span class="menu-trigger menu-trigger-overlay"></span>
+    <a class="scrollup"><i class="ti-arrow-up"></i></a>
+    {% include 'FrontBundle:Main/include:login_modal.html.twig' %}
+{% endblock %}

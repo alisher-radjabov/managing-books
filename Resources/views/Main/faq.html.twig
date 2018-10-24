@@ -1,0 +1,107 @@
+{% extends ':front:base.html.twig' %}
+{% block content %}
+    <body id="body">
+    <!-- class="start-menuHide side-menu-hidden" -->
+    <div class="main-wrapper" id="main-wrapper">
+        {% include 'FrontBundle:Main/include:header.html.twig' %}
+        <div class="main-content">
+            <aside id="side-navigation">
+                <div class="side-navigation-inner">
+                    <h4 class="h5 strong6 main-color p-3 sideMenuHead">
+                        <a href="#" class="styled-icon styled-icon--xs styled-icon--round menu-trigger main-color "> <i class="ti-close"></i> </a>
+                        <a href="#" class="main-logo d-inline-block align-top"> <img src="../assets/img/logo.jpg" alt=""></a>
+                    </h4>
+                    <div class="side-nav">
+                        {% include 'FrontBundle:Main/include:side_menu.html.twig' %}
+                        {% include 'FrontBundle:Main/include:side_nav_tabs.html.twig' %}
+                    </div>
+                </div>
+            </aside>
+            <section id="main-sec">
+                <div id="mainView" class="mainView-normal">
+                    <div class="main-sec-header">
+                        <div class="main-page-header-top p-4">
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{{ path('front_main_index') }}">{{ 'front.main_side_menu.home'|trans }}</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">{{ 'front.main_side_menu.faq'|trans }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="main-sec-inner mainView-content p-4">
+                        <div class="staticPageBlock">
+                            <h1 class="strong5 main-color mb-4">{{ 'front.main_side_menu.faq'|trans }}</h1>
+                            <div id="faq2Questions">
+                                <div class="card mb-3">
+                                    <div class="head-title p-3">
+                                        <a data-toggle="collapse" data-target="#faq1"><h4 class="strong5"><i class="ti-info"></i> عنوان السؤال هنا؟ </h4></a>
+                                    </div>
+                                    <div id="faq1" class="collapse show" data-parent="#faq2Questions">
+                                        <p class="card-body">
+                                            السيد أبو الحسن الندوي رحمه الله: «كان الإمام محمدي مهدي علي رحمه الله من العباقرة الذين ساهموا في صياغة العقل المسلم المعاصر في شبه القارة الهندية. وكتابه "الآيات البينات" شاهد صدق على قوة شخصيته وعقليته العبقرية وبيانه الساحر المبين. وكأنه لسان الفطرة بعث ليزيل شبهات الضلال عن الرعيل الأول صحابة خير البشر صلى الله عليه وسلم بأسلوب متوثب حي يدعو العقول إلى مراجعة صفحات المعتقدات الزائفة التي اختلقها الشيعة الإثنا عشرية».
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="card mb-3">
+                                    <div class="head-title p-3">
+                                        <a data-toggle="collapse" data-target="#faq2"><h4 class="strong5"><i class="ti-info"></i> عنوان السؤال الثاني هنا؟</h4></a>
+                                    </div>
+                                    <div id="faq2" class="collapse" data-parent="#faq2Questions">
+                                        <p class="card-body">
+                                            السيد أبو الحسن الندوي رحمه الله: «كان الإمام محمدي مهدي علي رحمه الله من العباقرة الذين ساهموا في صياغة العقل المسلم المعاصر في شبه القارة الهندية. وكتابه "الآيات البينات" شاهد صدق على قوة شخصيته وعقليته العبقرية وبيانه الساحر المبين. وكأنه لسان الفطرة بعث ليزيل شبهات الضلال عن الرعيل الأول صحابة خير البشر صلى الله عليه وسلم بأسلوب متوثب حي يدعو العقول إلى مراجعة صفحات المعتقدات الزائفة التي اختلقها الشيعة الإثنا عشرية».
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="card mb-3">
+                                    <div class="head-title p-3">
+                                        <a data-toggle="collapse" data-target="#faq3"><h4 class="strong5"><i class="ti-info"></i> عنوان السؤال هنا؟ </h4></a>
+                                    </div>
+                                    <div id="faq3" class="collapse" data-parent="#faq2Questions">
+                                        <p class="card-body">
+                                            السيد أبو الحسن الندوي رحمه الله: «كان الإمام محمدي مهدي علي رحمه الله من العباقرة الذين ساهموا في صياغة العقل المسلم المعاصر في شبه القارة الهندية. وكتابه "الآيات البينات" شاهد صدق على قوة شخصيته وعقليته العبقرية وبيانه الساحر المبين. وكأنه لسان الفطرة بعث ليزيل شبهات الضلال عن الرعيل الأول صحابة خير البشر صلى الله عليه وسلم بأسلوب متوثب حي يدعو العقول إلى مراجعة صفحات المعتقدات الزائفة التي اختلقها الشيعة الإثنا عشرية».
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="card mb-3">
+                                    <div class="head-title p-3">
+                                        <a data-toggle="collapse" data-target="#faq4"><h4 class="strong5"><i class="ti-info"></i> عنوان السؤال الرابع هنا؟</h4></a>
+                                    </div>
+                                    <div id="faq4" class="collapse" data-parent="#faq2Questions">
+                                        <p class="card-body">
+                                            السيد أبو الحسن الندوي رحمه الله: «كان الإمام محمدي مهدي علي رحمه الله من العباقرة الذين ساهموا في صياغة العقل المسلم المعاصر في شبه القارة الهندية. وكتابه "الآيات البينات" شاهد صدق على قوة شخصيته وعقليته العبقرية وبيانه الساحر المبين. وكأنه لسان الفطرة بعث ليزيل شبهات الضلال عن الرعيل الأول صحابة خير البشر صلى الله عليه وسلم بأسلوب متوثب حي يدعو العقول إلى مراجعة صفحات المعتقدات الزائفة التي اختلقها الشيعة الإثنا عشرية».
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="card mb-3">
+                                    <div class="head-title p-3">
+                                        <a data-toggle="collapse" data-target="#faq5"><h4 class="strong5"><i class="ti-info"></i> عنوان السؤال الرابع هنا؟</h4></a>
+                                    </div>
+
+                                    <div id="faq5" class="collapse" data-parent="#faq2Questions">
+                                        <p class="card-body">
+                                            السيد أبو الحسن الندوي رحمه الله: «كان الإمام محمدي مهدي علي رحمه الله من العباقرة الذين ساهموا في صياغة العقل المسلم المعاصر في شبه القارة الهندية. وكتابه "الآيات البينات" شاهد صدق على قوة شخصيته وعقليته العبقرية وبيانه الساحر المبين. وكأنه لسان الفطرة بعث ليزيل شبهات الضلال عن الرعيل الأول صحابة خير البشر صلى الله عليه وسلم بأسلوب متوثب حي يدعو العقول إلى مراجعة صفحات المعتقدات الزائفة التي اختلقها الشيعة الإثنا عشرية».
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="card mb-3">
+                                    <div class="head-title p-3">
+                                        <a data-toggle="collapse" data-target="#faq6"><h4 class="strong5"><i class="ti-info"></i> عنوان السؤال الرابع هنا؟</h4></a>
+                                    </div>
+                                    <div id="faq6" class="collapse" data-parent="#faq2Questions">
+                                        <p class="card-body">
+                                            السيد أبو الحسن الندوي رحمه الله: «كان الإمام محمدي مهدي علي رحمه الله من العباقرة الذين ساهموا في صياغة العقل المسلم المعاصر في شبه القارة الهندية. وكتابه "الآيات البينات" شاهد صدق على قوة شخصيته وعقليته العبقرية وبيانه الساحر المبين. وكأنه لسان الفطرة بعث ليزيل شبهات الضلال عن الرعيل الأول صحابة خير البشر صلى الله عليه وسلم بأسلوب متوثب حي يدعو العقول إلى مراجعة صفحات المعتقدات الزائفة التي اختلقها الشيعة الإثنا عشرية».
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% include 'FrontBundle:Main/include:footer.html.twig' %}
+            </section>
+        </div>
+    </div>
+    <!-- End of main-wrapper -->
+    <span class="menu-trigger menu-trigger-overlay"></span>
+    <a class="scrollup"><i class="ti-arrow-up"></i></a>
+    {% include 'FrontBundle:Main/include:login_modal.html.twig' %}
+{% endblock %}

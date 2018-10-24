@@ -1,0 +1,233 @@
+{% extends ':front:base.html.twig' %}
+
+{% block content %}
+    <body id="body">
+    <!-- class="start-menuHide side-menu-hidden" -->
+    <div class="main-wrapper" id="main-wrapper">
+        {% include 'FrontBundle:Main/include:header.html.twig' %}
+        <div class="main-content">
+            <aside id="side-navigation">
+                <div class="side-navigation-inner">
+                    <h4 class="h5 strong6 main-color p-3 sideMenuHead">
+                        <a href="#" class="styled-icon styled-icon--xs styled-icon--round menu-trigger main-color ">
+                            <i class="ti-close"></i></a>
+                        <a href="#" class="main-logo d-inline-block align-top"> <img src="../assets/img/logo.jpg" alt=""></a>
+                    </h4>
+                    <div class="side-nav">
+                        {% include 'FrontBundle:Main/include:side_menu.html.twig' %}
+                        {% include 'FrontBundle:Main/include:side_nav_tabs.html.twig' %}
+                    </div>
+                </div>
+            </aside>
+            <section id="main-sec">
+                <div id="mainView">
+                    <div class="main-sec-header">
+                        <div class="main-page-header-top p-4">
+                            <div class="page-header-top-title">
+                                <h1 class="h2 mb-0">
+                                <span class="styled-icon styled-icon-imgCenter styled-icon--sm styled-icon--dark bg-color">
+                                    <i class="ti-user"></i>
+                                </span>
+                                    <span class="page-header-top-text">{{ 'front.register.create_new_account'|trans }}</span>
+                                </h1>
+                            </div>
+                            <div class="page-header-top-side mr-auto">
+                                <ul class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="{{ path('front_main_index') }}">{{ 'front.main_side_menu.home'|trans }}</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">{{ 'front.register.register'|trans }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-sec-inner mainView-content p-4">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-12 col-sm-12">
+                                <div class="card cat-card mb-4">
+                                    <div class="head-title-alt p-3">
+                                        <h3 class="h4 strong5">{{ 'front.register.register_account_by_email'|trans }}</h3>
+                                    </div>
+                                    <div class="p-4">
+                                        {{ form_errors(form) }}
+                                        {{ form_start(form, {'attr': {'id': 'register-form','novalidate':'true', 'class': 'form-horizontal', 'role':'form'}}) }}
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group mb-30">
+                                                    <label class="control-label"
+                                                           for="contact-name">{{ form_label(form.username) }}</label>
+                                                    {{ form_errors(form.username) }}
+                                                    {{ form_widget(form.username, {'attr': {'class': 'form-control'}}) }}
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group mb-30">
+                                                    <label class="control-label"
+                                                           for="contact-lastName">{{ form_label(form.realName) }}</label>
+                                                    {{ form_errors(form.realName) }}
+                                                    {{ form_widget(form.realName, {'attr': {'class': 'form-control'}}) }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group mb-30">
+                                                    <label class="control-label"
+                                                           for="contact-confirmMail">{{ form_label(form.phoneNumber) }}</label>
+                                                    {{ form_errors(form.phoneNumber) }}
+                                                    {{ form_widget(form.phoneNumber, {'attr': {'class': 'form-control'}}) }}
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group mb-30">
+                                                    <label class="control-label"
+                                                           for="contact-mail">{{ 'front.register.email'|trans }}</label>
+                                                    {{ form_errors(form.email) }}
+                                                    {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group mb-30">
+                                                    <label class="control-label"
+                                                           for="register-country">{{ 'front.register.country'|trans }}</label>
+                                                    {{ form_errors(form.countryId) }}
+                                                    {{ form_widget(form.countryId, {'attr': {'class': 'form-control'}}) }}
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group mb-30">
+                                                    <label class="control-label"
+                                                           for="contact-confirmMail">{{ form_label(form.photoFile) }}</label>
+                                                    {{ form_errors(form.photoFile) }}
+                                                    {{ form_widget(form.photoFile, {'attr': {'class': 'form-control'}}) }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6" style="display: none;">
+                                                <div class="form-group mb-30">
+                                                    <label class="control-label"
+                                                           for="contact-confirmMail">{{ form_label(form.enabled) }}</label>
+                                                    {{ form_errors(form.enabled) }}
+                                                    {{ form_widget(form.enabled, {'attr': {'class': 'form-control'}}) }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group mb-30">
+                                                    <label class="control-label"
+                                                           for="register-pass">{{ 'front.register.password'|trans }}</label>
+                                                    {{ form_errors(form.plainPassword.first) }}
+                                                    {{ form_widget(form.plainPassword.first, {'attr': {'class': 'form-control'}}) }}
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group mb-30">
+                                                    <label class="control-label"
+                                                           for="register-confirmPass">{{ 'front.register.confirm_password'|trans }}</label>
+                                                    {{ form_errors(form.plainPassword.second) }}
+                                                    {{ form_widget(form.plainPassword.second, {'attr': {'class': 'form-control'}}) }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group mb-30">
+                                                    <label class="control-label"
+                                                           for="contact-confirmMail">{{ form_label(form.sex) }}</label>
+                                                    {{ form_errors(form.sex) }}
+                                                    {{ form_widget(form.sex, {'attr': {'class': 'form-control'}}) }}
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group mb-30">
+                                                    <label class="control-label"
+                                                           for="contact-mail">{{ 'admin.titles.date_of_birth'|trans }}</label>
+                                                    {{ form_errors(form.dateOfBirth) }}
+                                                    {{ form_widget(form.dateOfBirth) }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6" style="display: none;">
+                                                <div class="form-group mb-30">
+                                                    <label class="control-label"
+                                                           for="contact-mail">{{ 'front.register.email'|trans }}</label>
+                                                    {{ form_errors(form.personalWebsite) }}
+                                                    {{ form_widget(form.personalWebsite, {'attr': {'class': 'form-control'}}) }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6" style="display: none;">
+                                                <div class="form-group mb-30">
+                                                    <label class="control-label"
+                                                           for="contact-confirmMail">{{ form_label(form.resume) }}</label>
+                                                    {{ form_errors(form.resume) }}
+                                                    {{ form_widget(form.resume, {'attr': {'class': 'form-control'}}) }}
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6" style="display: none;">
+                                                <div class="form-group mb-30">
+                                                    <label class="control-label"
+                                                           for="contact-mail">{{ 'front.register.email'|trans }}</label>
+                                                    {{ form_errors(form.groups) }}
+                                                    {{ form_widget(form.groups, {'attr': {'class': 'form-control'}}) }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{ form_rest(form) }}
+                                        <div class="clearfix form-actions">
+                                            <div class="col-md-offset-2 col-md-10">
+                                                <button type="submit" name="submit"
+                                                        class="button btn-solid btn-main btn-big mt-2">{{ 'front.register.sign_up'|trans }}</button>
+                                            </div>
+                                        </div>
+                                        {{ form_end(form) }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12 col-sm-12">
+                                <div class="card cat-card mb-4">
+                                    <div class="head-title-alt p-3">
+                                        <h3 class="h4 strong5">{{ 'front.register.register_account_with'|trans }}</h3>
+                                    </div>
+
+                                    <div class="p-4">
+                                        <button type="button" class="button btn-solid btn-block facebook">
+                                            <i class="ti-facebook"></i>
+                                            <span>
+                                                <a target="_blank" href="#" id="register-with-facebook" style="color: #ffffff;">{{ 'front.register.register_account_using'|trans }} Facebook</a>
+                                            </span>
+                                        </button>
+
+                                        <button type="button" class="button btn-solid btn-block twitter">
+                                            <i class="ti-twitter"></i>
+                                            <a target="_blank" href="http://twitter.com/login" id="register-with-twitter" style="color: #ffffff;">
+                                                <span>{{ 'front.register.register_account_using'|trans }} Twitter</span>
+                                            </a>
+                                        </button>
+
+                                        <button type="button" class="button btn-solid btn-block gplus">
+                                            <i class="ti-google"></i>
+                                            <a target="_blank" style="color: #ffffff;"
+                                               href="https://accounts.google.com/signup/v2/webcreateaccount?continue=https%3A%2F%2Fplus.google.com%2Fdiscover&flowName=GlifWebSignIn&flowEntry=SignUp">
+                                                <span>{{ 'front.register.register_account_using'|trans }} Google+</span>
+                                            </a>
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- End of main-wrapper -->
+    <span class="menu-trigger menu-trigger-overlay"></span>
+    <a class="scrollup"><i class="ti-arrow-up"></i></a>
+    {% include 'FrontBundle:Main/include:login_modal.html.twig' %}
+{% endblock %}

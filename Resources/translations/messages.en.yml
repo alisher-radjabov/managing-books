@@ -1,0 +1,179 @@
+front:
+    config:
+        social_settings: Social network settings
+        facebook_url: Facebook page url - %locale%
+        twitter_url: Twitter page url - %locale%
+        youtube_url: Youtube page url - %locale%
+        google_url: Google+ page url - %locale%
+        telegram_url: Telegram url - %locale%
+        whatsapp_url: WhatsApp url - %locale%
+        mail_url: Mail url - %locale%
+        rss_url: RSS url - %locale%
+        applications: Applications
+        android_app_url: Url for android app
+        ios_app_url: Url for IOS app
+
+    head:
+        title: Smartlib V2 Front
+        english: English
+        arabic: العربية Arabic
+
+    menu:
+        about_us: About Us
+        join: Join
+        contact_us: Contact Us
+        name: Name
+        sort_by: Sort by
+        title: Title
+
+    register:
+        login: Login
+        logout: Logout
+        register: Register
+        register_account_by_email: Register an account by e-mail
+        register_account_with: Register an account with
+        register_account_using: Register account using
+        create_new_account: Create a new account
+        first_name: First Name
+        last_name: Last Name
+        email: Email address
+        country: Country
+        password: Password
+        confirm_password: Confirm password
+        sign_up: Sign Up
+        main: Main
+        username: Username
+        by_email: By Email
+        by_facebook: By Facebook
+        by_twitter: By Twitter
+        by_google: By Google+
+        forgot_password: Forgot my password?
+        remember_me: Remember me
+        recover_password: Recover My Password
+        send_password: Send Password
+        back_to_login: Back to login
+        account_settings: Account Settings
+
+    main_side_menu:
+        home: Home
+        all_books: All Books
+        my_favorit_books: My Favorite Books
+        authors: Authors
+        translators: Translators
+        updated_books: Updated Books
+        new_articles: New Articles
+        our_apps: Our Apps
+        faq: FAQ
+
+    side_tab_nav:
+        categories: Categories
+        authors: Authors
+        translators: Translators
+
+    main:
+        about_us: 'But I did not read it surprised when I found written in it: ((the master of the messengers peace be upon him sons of Bani Hashem in Mecca on the morning of Monday the ninth of the month of spring I)). I said to myself: The famous known people when he was born peace be upon him on the twelfth day of the first spring'
+        search: Search
+        new_articles: New Articles
+        last_released: Last Released
+        most_viewed: Most Viewed
+        top_downloaded: Top downloaded
+        more: More
+        read: View
+        download: Download
+        parts: parts
+        view_parts: View Parts
+        about_book: About the book
+        author: Author
+        translator: Translator
+        verificator: Verificator
+        author_books: Author books
+        similar: Similar
+        rating: Ratings Comments
+        book_details: Book Details
+        book_info: Book Info
+        book: Book
+        books: Books
+        diwy: Diwy
+        page: Page
+        pages: Pages
+        total: Total
+        views: Views
+        downloads: Downloads
+        my_downloads: My downloads
+        other_book_parts: Other book parts
+        books_in_other_languages: Books in other languages
+        books_i_started_reading: Books I Started Reading
+        book_index: Book index
+        number_of_authors_books: Number of authorized books on the site
+        number_of_translated_books: Number of translated books on the site
+        articles: Articles
+        follow: Follow
+        unfollow: Unfollow
+        profile: Profile
+        keywords: Keywords
+        report_issue: Report issue
+        rights: All right recevied to al Smart Library،
+        licence: license agreement Website Content
+        download_app: Download our App for Ios and android from here
+        books_matched: Books matched
+        last_updated: Last Update
+        date_released: Date Release
+        all_categories: All Categories
+        activities: Activities
+        favorites: Favorites
+        authors_i_follow: Authors I follow
+        leave_comment: Leave your Comment
+        login_to_comment: You must be logged in to be able to post your comment!
+        share_the_book: Share The book
+        by_email: By Email
+        previous: Previous
+        next: Next
+
+
+    message:
+        sorry: Sorry
+        send_us_message: Send Us a Message
+        message_subject: Message Subject
+        your_message: Your Message
+        address: Address
+
+    user:
+        continue_reading: Continue reading
+        start_reading: Start reading
+        change_profile_picture: Change the profile picture
+        account_settings: Account settings
+        change_username: Change the username
+        change_password: Change password
+        old_password: Old password
+        new_password: New password
+        save: Save
+
+
+    modal:
+        book_deleted_from_fav: Book deleted from favorites
+        not_able_to_follow_the_book: You are no longer able to follow or receive notifications for this book
+        book_added_to_fav: The book has been added to favorites
+        able_to_follow_the_book: You can browse favorite books from your profile
+
+    book:
+        epub: EPUB file
+        pdf: PDF file
+        doc: MS Word file
+        print_book: Print Book
+        report_issue: Report an issue
+        book_add: Book Add
+
+    search:
+        search_for: Search for
+        search: Search
+        search_category: Search category
+
+    sort:
+        sort_by_top_views: Sort by top views
+        sort_by_top_downloads: Sort by top downloads
+
+
+    shop:
+        shopping_cart: Shopping Cart
+        complete_shopping: Complete Shopping
+        view_cart: View Cart

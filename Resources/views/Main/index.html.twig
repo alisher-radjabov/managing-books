@@ -1,0 +1,40 @@
+{% extends ':front:base.html.twig' %}
+
+{% block content %}
+    <body id="body">
+    <!-- class="start-menuHide side-menu-hidden" -->
+    <div class="main-wrapper" id="main-wrapper">
+        {% include 'FrontBundle:Main/include:header.html.twig' %}
+        <div class="main-content">
+            <aside id="side-navigation">
+                <div class="side-navigation-inner">
+                    <h4 class="h5 strong6 main-color p-3 sideMenuHead">
+                        <a href="#" class="styled-icon styled-icon--xs styled-icon--round menu-trigger main-color "> <i class="ti-close"></i> </a>
+                        <a href="#" class="main-logo d-inline-block align-top"> <img src="../assets/img/logo.jpg" alt=""></a>
+                    </h4>
+                    <div class="side-nav">
+                        {% include 'FrontBundle:Main/include:side_menu.html.twig' %}
+                        {% include 'FrontBundle:Main/include:side_nav_tabs.html.twig' %}
+                    </div>
+                </div>
+            </aside>
+            <section id="main-sec">
+                <div class="main-sec-inner p-4">
+                    <div class="row">
+                        {% include 'FrontBundle:Main/include:slider.html.twig' %}
+                        {% include 'FrontBundle:Main/include:new_articles.html.twig' %}
+                    </div>
+                    {% include 'FrontBundle:Main/include:last_released.html.twig' %}
+                    {% include 'FrontBundle:Main/include:most_viewed.html.twig' %}
+                </div>
+                {% include 'FrontBundle:Main/include:footer.html.twig'%}
+            </section>
+        </div>
+    </div>
+    <!-- End of main-wrapper -->
+    <span class="menu-trigger menu-trigger-overlay"></span>
+    <a class="scrollup"><i class="ti-arrow-up"></i></a>
+
+    {% include 'FrontBundle:Main/include:login_modal.html.twig' %}
+
+{% endblock %}

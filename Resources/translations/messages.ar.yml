@@ -1,0 +1,63 @@
+front:
+    config:
+        social_settings: إعدادات مواقع التواصل الإجتماعي
+        facebook_url: رابط صفحة ال Facebook - %locale%
+        twitter_url: رابط صفحة Twitter - %locale%
+        youtube_url: رابط صفحة Youtube - %locale%
+        google_url: رابط صفحة Google+ - %locale%
+        telegram_url: رابط ال Telegram - %locale%
+        whatsapp_url: رابط ال WhatsApp - %locale%
+        mail_url: البريد الإلكتروني - %locale%
+        rss_url: رابط التغذية المرتدة RSS - %locale%
+        applications: التطبيقات
+        android_app_url: رابط تطبيق الاندرويد
+        ios_app_url: رابط تطبيق ال IOS
+
+    head:
+        title: Smartlib V2 Front
+        english: English
+        arabic: العربية Arabic
+
+    register:
+        login: تسجيل الدخول
+        logout: الخروج
+        register: تسجيل
+        register_account_by_email: تسجيل حساب بواسطة الإميل
+        create_new_account: إنشاء حساب جديد
+        first_name: الإسم الأول
+        last_name: الإسم الأخير
+        email: الإميل
+        confirm_email: تأكيد الإميل
+        country: الدولة
+        password: كلمة المرور
+        confirm_password: تأكيد كلمة المرور
+        sign_up: تسجيل
+        main: الرئيسية
+
+    main_side_menu:
+        home: الرئيسية
+        all_books: جميع الكتب
+        my_favorit_books: كتبى المفضلة
+        authors: المؤلفون
+        translators: المترجمون
+        updated_books: الكتب المحدثة
+        new_articles: أحدث المقالات
+        our_apps: تطبيقات الموقع
+        faq: أسئلة شائعة
+
+    side_tab_nav:
+        categories: التصنيفات
+        authors: مؤلفين
+        translators: مترجمين
+
+    main:
+        about_us: ' لكني لما قرأته تفاجأت إذ وجدت مكتوباً فيه: ((ولد سيد المرسلين صلى الله عليه وسلم بشِعْبِ بني هاشم بمكة في صبيحة يوم الاثنين التاسع من شهر ربيع الأول)). قلت في نفسي: المشهور المعروف عند الناس أنه وُلِد صلى الله عليه وسلم في يوم الثاني عشر من ربيع الأول؟ '
+        new_articles: أحدث المقالات
+        last_released: جديد الكتب
+        most_viewed: أكثر الكتب قراءة
+        top_downloaded: الأكثر تحميلا
+        more: المزيد
+        read:  قراءة
+        download:  تحميل
+        parts: parts
+        view_parts: View Parts

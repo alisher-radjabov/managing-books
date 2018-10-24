@@ -1,0 +1,39 @@
+<ul class="side-menu mb-4">
+    <li><a href="{{ path('front_homepage') }}" class="sideMenu-link active">
+            <i class="sideMenu-ico ti-home bg-color"></i>{{ 'front.main_side_menu.home'|trans }} <i class="sideMenu-arrow ti-angle-right"></i>
+        </a></li>
+    <li><a href="{{ path('front_main_all_books') }}" class="sideMenu-link">
+            <i class="sideMenu-ico ti-book" style="background-color: #ca9f21;"></i>{{ 'front.main_side_menu.all_books'|trans }}<i
+                    class="sideMenu-arrow ti-angle-right"></i>
+        </a></li>
+    {#<li><a href="{{ path('front_main_favorite_books') }}" class="sideMenu-link">#}
+            {#<i class="sideMenu-ico ti-heart" style="background-color: #ffcb05;"></i> {{ 'front.main_side_menu.my_favorit_books'|trans }}<i#}
+                    {#class="sideMenu-arrow ti-angle-right"></i>#}
+        {#</a></li>#}
+    <li><a href="{{ path('front_main_authors') }}" class="sideMenu-link">
+            <span class="sideMenu-ico" style="background-color: #1851f3;"><img
+                        src="{{ asset('bundles/front/img/icons/author.svg') }}"></span>{{ 'front.main_side_menu.authors'|trans }}
+            <i class="sideMenu-arrow ti-angle-right"></i>
+        </a></li>
+    <li><a href="{{ path('front_main_translators') }}" class="sideMenu-link">
+            <span class="sideMenu-ico" style="background-color: #1889f3;"><img
+                        src="{{ asset('bundles/front/img/icons/translation.svg') }}"></span>{{ 'front.main_side_menu.translators'|trans }} <i
+                    class="sideMenu-arrow ti-angle-right"></i>
+        </a></li>
+    <li><a href="{{ path('front_main_updated_books') }}" class="sideMenu-link">
+            <i class="sideMenu-ico ti-time" style="background-color: #ea4e4e;"></i>{{ 'front.main_side_menu.updated_books'|trans }}<i
+                    class="sideMenu-arrow ti-angle-right"></i>
+        </a></li>
+    <li><a href="{{ path('front_main_new_articles') }}" class="sideMenu-link">
+            <i class="sideMenu-ico ti-comment-alt" style="background-color: #cc7e7e;"></i>{{ 'front.main_side_menu.new_articles'|trans }}<i
+                    class="sideMenu-arrow ti-angle-right"></i>
+        </a></li>
+    {#<li><a href="{{ path('front_main_our_apps') }}" class="sideMenu-link">#}
+            {#<i class="sideMenu-ico ti-mobile" style="background-color: #faa61a;"></i>{{ 'front.main_side_menu.our_apps'|trans }}<i#}
+                    {#class="sideMenu-arrow ti-angle-right"></i>#}
+        {#</a></li>#}
+    <li><a href="{{ path('front_main_faq') }}" class="sideMenu-link">
+            <i class="sideMenu-ico ti-help" style="background-color: #85d24c;"></i> {{ 'front.main_side_menu.faq'|trans }}<i
+                    class="sideMenu-arrow ti-angle-right"></i>
+        </a></li>
+</ul>

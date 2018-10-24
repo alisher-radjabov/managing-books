@@ -1,0 +1,297 @@
+<div id="mainView" class="mainView-normal">
+    <div class="card mb-3">
+        <div class="head-title d-flex  no-padding">
+            <ul class="tabs-nav nav nav-lines nav-lines-md" id="pills-tab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="pill" href="#topViews-books" role="tab" aria-expanded="true">{{ 'front.main.most_viewed'|trans }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="pill" href="#topDownloads-books" role="tab" aria-expanded="true">{{ 'front.main.top_downloaded'|trans }}</a>
+                </li>
+
+                <!-- if logged in -->
+
+                {#<li class="nav-item">#}
+                    {#<a class="nav-link" data-toggle="pill" href="#myFavs-books" role="tab" aria-expanded="true">My Favorits </a>#}
+                {#</li>#}
+
+            </ul>
+            <ul class="ml-auto mainView-toggles">
+                <li><a class="mainView-normal-trig"><i class="ti-view-grid"></i></a></li>
+                <li><a class="mainView-list-trig"><i class="ti-view-list"></i></a></li>
+                <li><a class="mainView-compact-trig"><i class="ti-align-justify"></i></a></li>
+            </ul>
+        </div>
+        <div class="mainView-content">
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="topViews-books" role="tabpanel" >
+                    {% if mostViewedBooks is defined %}
+                    <ul class="row tight-row p-3">
+                        {% for mostViewedBook in mostViewedBooks %}
+                            <li class="col-lg-4 col-md-6 col-sm-12 mainView-item">
+                            <div class="card mainView-card mb-3">
+                                <div class="card-body">
+                                    <div class="thumbnail-item side-thumbnail-item">
+                                        <div class="thumb-head">
+                                            <div class="thumb-head-inner">
+                                                <div class="book-thumb book-thumb-sm book-withParts">
+                                                    {% if mostViewedBook.collection %}
+                                                        <div class="book-parts-patch">
+                                                            <span>
+                                                                {{ globalVarService.getOtherBookPartsCount(mostViewedBook.collection) }} {{ 'front.main.parts'|trans }}
+                                                            </span>
+                                                        </div>
+                                                    {% endif %}
+                                                    <a class="book-cover" href="{{ path('front_book_book_details', {'id': mostViewedBook.id }) }}">
+                                                        <img src="{{ asset(mostViewedBook.photo) }}" alt="{{ mostViewedBook.translate().summary }}">
+                                                        <span class="book-cover-mark"></span>
+                                                    </a>
+                                                    <div class="book-info dropdown">
+                                                        <a href="#" class="styled-icon styled-icon--xxs styled-icon--round styled-icon--borderd bg-color-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-info"></i></a>
+                                                        <div class="dropdown-menu dropdown-menu-right bg-color-light">
+                                                            <ul class="p-4 icons-list">
+                                                                <li><i class="ti-user"></i> {{ 'front.main.author'|trans }}: <a href="#" class="color2 strong6">
+                                                                    {% for author in mostViewedBook.author %}{{ author.translate().name }}{% endfor %}
+                                                                    </a> </li>
+                                                                {% for translator in mostViewedBook.translator %}
+                                                                    {% if translator != null %}
+                                                                        <li> <i class="ti-world"></i> {{ 'front.main.translator'|trans }}: <a href="#" class="color2 strong6">
+                                                                                {{ translator.translate().name }}
+                                                                            </a> </li>
+                                                                    {% endif %}
+                                                                {% endfor %}
+                                                                <li> <i class="ti-calendar"></i> {{ 'front.main.date_released'|trans }}: <strong class="strong6">17 Shawal 1437 Hijri </strong> </li>
+                                                                <li> <i class="ti-light-bulb"></i> {{ 'front.main.last_updated'|trans }}: <strong class="strong6">18 Muharam 1437 Hijri </strong> </li>
+                                                                <li> <i class="ti-list"></i> {{ 'front.main.diwy'|trans }} : <strong class="strong6"> {{ mostViewedBook.dewey }}</strong> </li>
+                                                                {% if mostViewedBook.numPage != null %}
+                                                                    <li> <i class="ti-files"></i> {{ 'front.main.pages'|trans }}: <strong class="strong6">{{ mostViewedBook.numPage }}
+                                                                        </strong> </li>
+                                                                {% endif %}
+                                                                {% if mostViewedBook.viewsFromApp != null or mostViewedBook.viewsFromSite != null %}
+                                                                    <li> <i class="ti-eye"></i> {{ 'front.main.views'|trans }} : <strong class="strong6">
+                                                                        {{ mostViewedBook.viewsFromApp + mostViewedBook.viewsFromSite}}
+                                                                        </strong></li>
+                                                                {% endif %}
+                                                                {% if mostViewedBook.downloadsFromApp != null or mostViewedBook.downloadsFromSite != null %}
+                                                                    <li> <i class="ti-download"></i> {{ 'front.main.downloads'|trans }} : <strong class="strong6">
+                                                                        {{ mostViewedBook.downloadsFromApp + mostViewedBook.downloadsFromSite}}
+                                                                    </strong> </li>
+                                                                {% endif %}
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="thumb-body">
+                                            <div class="thumb-body-inner mt-1">
+                                                <a href="{{ path('front_book_book_details', {'id': mostViewedBook.id }) }}" class="thumb-body-title" title="{{ mostViewedBook.translate().title }}"><h3 class="h4">{{ mostViewedBook.translate().title|length > 60 ? mostViewedBook.translate().title|slice(0, 60) ~ ' ... ' : mostViewedBook.translate().title }}</h3></a>
+                                                {% for author in mostViewedBook.author %}
+                                                    <a href="{{ path('front_main_author_details', {'id': author.id}) }}" class="main-color thumb-body-alt mt-1"><i class="ti-user"></i>
+                                                        {{ author.translate().name }}
+                                                    </a>
+                                                {% endfor %}
+                                                {% if mostViewedBook.collection == false %}
+                                                    <div class="thumb-body-controls">
+                                                        <a href="{{ path('front_book_book_details', {'id': mostViewedBook.id}) }}" class="button btn-solid btn-small btn-alt"><i class="ti-book"></i>  {{ 'front.main.read'|trans }}</a>
+                                                        <div class="thumb-over-corner-tr">
+                                                            <a class="fav-ico true styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                                        </div>
+                                                    </div>
+                                                {% endif %}
+
+                                                <div class="thumb-body-controls">
+                                                    {% if mostViewedBook.collection %}
+                                                        <div class="dropdown inline-block">
+                                                            <a href="{{ path('front_book_book_details', {'id': mostViewedBook.id}) }}" class="button btn-solid btn-small btn-alt"><i class="ti-book"></i>  {{ 'front.main.read'|trans }}</a>
+                                                            <a class="button btn-solid btn-small btn-orange dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                {{ 'front.main.view_parts'|trans }} <i class="ti-angle-down"></i></a>
+                                                            <div class="dropdown-menu ">
+                                                                <ul>
+                                                                    {% for otherPart in globalVarService.getOtherBookParts(mostViewedBook.collection) %}
+                                                                        <li>
+                                                                            <div class="dropdown-item-block">
+                                                                                <a href="{{ path('front_book_book_details', {'id': otherPart.id}) }}" class="thumbnail-item side-thumbnail-item">
+                                                                                    <div class="thumb-head">
+                                                                                        <div class="thumb-head-inner">
+                                                                                            <div class="book-thumb" style="width: 50px">
+                                                                                                <div class="book-cover">
+                                                                                                    <img src="{{ asset(otherPart.photo) }}" alt="{{ mostViewedBook.translate().summary }}">
+                                                                                                    <span class="book-cover-mark"></span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="thumb-body">
+                                                                                        <div class="thumb-body-inner">
+                                                                                            <h5>{{ otherPart.translate().title }}</h5>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </a>
+                                                                            </div>
+                                                                        </li>
+                                                                    {% endfor %}
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    {% endif %}
+                                                    <div class="thumb-over-corner-tr">
+                                                        <a href="{{ path('front_book_add_favorite', {'id': mostViewedBook.id}) }}"
+                                                           class="fav-ico true styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <div class="text-center mt-4 mb-4">
+                        {{ knp_pagination_render(mostViewedBooks) }}
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="tab-pane fade" id="topDownloads-books" role="tabpanel">
+                    {% if mostDownloadedBooks is defined %}
+                    <ul class="row tight-row p-3">
+                        {% for mostDownloadedBook in mostDownloadedBooks %}
+                            <li class="col-lg-4 col-md-6 col-sm-12 mainView-item">
+                                <div class="card mainView-card mb-3">
+                                    <div class="card-body">
+                                        <div class="thumbnail-item side-thumbnail-item">
+                                            <div class="thumb-head">
+                                                <div class="thumb-head-inner">
+                                                    <div class="book-thumb book-thumb-sm">
+                                                        {% if mostDownloadedBook.collection %}
+                                                            <div class="book-parts-patch">
+                                                                <span>
+                                                                    {{ globalVarService.getOtherBookPartsCount(mostDownloadedBook.collection) }} {{ 'front.main.parts'|trans }}
+                                                                </span>
+                                                            </div>
+                                                        {% endif %}
+                                                        <a class="book-cover" href="{{ path('front_book_book_details', {'id': mostDownloadedBook.id }) }}">
+                                                            <img src="{{ asset(mostDownloadedBook.photo) }}" alt="{{ mostDownloadedBook.translate().summary }}">
+                                                            <span class="book-cover-mark"></span>
+                                                        </a>
+                                                        <div class="book-info dropdown">
+                                                            <a href="#" class="styled-icon styled-icon--xxs styled-icon--round styled-icon--borderd bg-color-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-info"></i></a>
+                                                            <div class="dropdown-menu dropdown-menu-right bg-color-light">
+                                                                <ul class="p-4 icons-list">
+
+                                                                    <li><i class="ti-user"></i> {{ 'front.main.author'|trans }}: <a href="#" class="color2 strong6">
+                                                                            {% for author in mostDownloadedBook.author %}{{ author.translate().name }}{% endfor %}
+                                                                        </a> </li>
+                                                                    {% for translator in mostDownloadedBook.translator %}
+                                                                        {% if translator != null %}
+                                                                            <li> <i class="ti-world"></i> {{ 'front.main.translator'|trans }}: <a href="#" class="color2 strong6">
+                                                                                {{ translator.translate().name }}
+                                                                            </a> </li>
+                                                                        {% endif %}
+                                                                    {% endfor %}
+                                                                    <li> <i class="ti-calendar"></i> {{ 'front.main.date_released'|trans }}: <strong class="strong6">17 Shawal 1437 Hijri </strong> </li>
+                                                                    <li> <i class="ti-light-bulb"></i> {{ 'front.main.last_updated'|trans }}: <strong class="strong6">18 Muharam 1437 Hijri </strong> </li>
+                                                                    <li> <i class="ti-list"></i> {{ 'front.main.diwy'|trans }} : <strong class="strong6"> {{ mostDownloadedBook.dewey }}</strong> </li>
+                                                                    {% if mostDownloadedBook.numPage != null %}
+                                                                        <li> <i class="ti-files"></i> {{ 'front.main.pages'|trans }}: <strong class="strong6">{{ mostDownloadedBook.numPage }}</strong> </li>
+                                                                    {% endif %}
+                                                                    {% if mostDownloadedBook.viewsFromApp != null or mostDownloadedBook.viewsFromSite != null %}
+                                                                        <li> <i class="ti-eye"></i> {{ 'front.main.views'|trans }} : <strong class="strong6">
+                                                                            {{ mostDownloadedBook.viewsFromApp + mostDownloadedBook.viewsFromSite}}
+                                                                        </strong> </li>
+                                                                    {% endif %}
+                                                                    {% if mostDownloadedBook.downloadsFromApp != null or mostDownloadedBook.downloadsFromSite != null %}
+                                                                        <li> <i class="ti-download"></i> {{ 'front.main.downloads'|trans }} : <strong class="strong6">
+                                                                            {{ mostDownloadedBook.downloadsFromApp + mostDownloadedBook.downloadsFromSite}}
+                                                                        </strong> </li>
+                                                                    {% endif %}
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="thumb-body">
+                                                <div class="thumb-body-inner mt-1">
+                                                    <a href="{{ path('front_book_book_details', {'id': mostDownloadedBook.id }) }}" class="thumb-body-title" title="{{ mostDownloadedBook.translate().title }}"><h3 class="h4">{{ mostDownloadedBook.translate().title|length > 60 ? mostDownloadedBook.translate().title|slice(0, 60) ~ ' ... ' : mostDownloadedBook.translate().title }}</h3></a>
+                                                        {% for author in mostDownloadedBook.author %}
+                                                            {% if author %}
+                                                            <a href="{{ path('front_main_author_details', {'id': author.id}) }}" class="main-color thumb-body-alt mt-1"><i class="ti-user"></i>
+                                                                {{ author.translate().name }}
+                                                            </a>
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    <div class="thumb-body-controls">
+                                                        {% if mostDownloadedBook.collection == false %}
+                                                            <a href="{{ path('front_book_book_details', {'id': mostDownloadedBook.id}) }}" class="button btn-solid btn-small btn-alt"><i class="ti-book"></i>  {{ 'front.main.read'|trans }}</a>
+                                                            {#<a class="button btn-borderd-hover btn-small btn-main bg-color-light" href="#" role="button"><i class="ti-download"></i> {{ 'front.main.download'|trans }}</a>#}
+                                                        {% endif %}
+                                                    </div>
+                                                    <div class="thumb-body-controls">
+                                                        {% if mostDownloadedBook.collection %}
+                                                            <div class="dropdown inline-block">
+                                                                <a href="{{ path('front_book_book_details', {'id': mostDownloadedBook.id}) }}" class="button btn-solid btn-small btn-alt"><i class="ti-book"></i>  {{ 'front.main.read'|trans }}</a>
+                                                                <a class="button btn-solid btn-small btn-orange dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    {{ 'front.main.view_parts'|trans }} <i class="ti-angle-down"></i></a>
+                                                                <div class="dropdown-menu ">
+                                                                    <ul>
+                                                                        {% for otherPart in globalVarService.getOtherBookParts(mostDownloadedBook.collection) %}
+                                                                            <li>
+                                                                                <div class="dropdown-item-block">
+                                                                                    <a href="{{ path('front_book_book_details', {'id': otherPart.id}) }}" class="thumbnail-item side-thumbnail-item">
+                                                                                        <div class="thumb-head">
+                                                                                            <div class="thumb-head-inner">
+                                                                                                <div class="book-thumb" style="width: 50px">
+                                                                                                    <div class="book-cover">
+                                                                                                        <img src="{{ asset(otherPart.photo) }}" alt="{{ mostDownloadedBook.translate().summary }}">
+                                                                                                        <span class="book-cover-mark"></span>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="thumb-body">
+                                                                                            <div class="thumb-body-inner">
+                                                                                                <h5>{{ otherPart.translate().title }}</h5>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </li>
+                                                                        {% endfor %}
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        {% endif %}
+                                                        <div class="thumb-over-corner-tr">
+                                                            <a href="{{ path('front_book_add_favorite', {'id': mostDownloadedBook.id}) }}"
+                                                               class="fav-ico styled-icon ripple styled-icon--xs styled-icon--round styled-icon--borderd"></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <div class="text-center mt-4 mb-4">
+                        {{ knp_pagination_render(mostDownloadedBooks) }}
+                    </div>
+                    {% endif %}
+                </div>
+
+                <!-- if logged in -->
+                {#<div class="tab-pane fade" id="myFavs-books" role="tabpanel">#}
+                    {#<div class="alert alert-warning mb-0" role="alert">#}
+                        {#<div class="alert-ico">#}
+                            {#<i class="ti-info"></i>#}
+                        {#</div>#}
+                        {#<strong>عذرا!</strong> لا توجد كتب فى المفضل قم <a href="#" data-toggle="modal" data-target="#loginModal">بتسجيل الدخول</a> وإضافة كتب الى المفضل لتتابع تقدمك#}
+                    {#</div>#}
+                {#</div>#}
+            </div>
+        </div>
+    </div>
+</div>
